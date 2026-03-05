@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Survey status – Carboneers x Atmosfair Dashboard</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1dec16043c310b4e12d30294f5edea52.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+<link href="site_libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
+<script src="site_libs/highcharts-9.3.1/highcharts.js"></script>
+<script src="site_libs/highcharts-9.3.1/highcharts-3d.js"></script>
+<script src="site_libs/highcharts-9.3.1/highcharts-more.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/stock.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/map.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/data.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/exporting.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/offline-exporting.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/drilldown.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/item-series.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/annotations.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/export-data.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/funnel.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/heatmap.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/treemap.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/sankey.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/organization.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/solid-gauge.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/streamgraph.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/sunburst.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/vector.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/wordcloud.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/xrange.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/tilemap.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/venn.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/gantt.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/timeline.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/bullet.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/coloraxis.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/dumbbell.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/lollipop.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/series-label.js"></script>
+<script src="site_libs/highcharts-9.3.1/plugins/motion.js"></script>
+<script src="site_libs/highcharts-9.3.1/custom/reset.js"></script>
+<script src="site_libs/highcharts-9.3.1/modules/boost.js"></script>
+<script src="site_libs/highchart-binding-0.9.4/highchart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&amp;family=Fira+Code:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="assets/tab-scroll-fix.js"></script>
+
+
+<link rel="stylesheet" href="assets/modal.css">
+<link rel="stylesheet" href="assets/pagination.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Carboneers x Atmosfair Dashboard</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./survey_status.html" aria-current="page"> 
+<span class="menu-text">Survey status</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reject_reason.html"> 
+<span class="menu-text">Reject reason</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Survey status</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+<style>
+/* Ensure chart containers expand to fit content */
+.cell-output-display,
+.cell-output,
+.panel-tabset-tabby > .tab-content,
+.panel-tabset > .tab-content,
+.tab-pane,
+.tab-pane.active,
+.card-body,
+.quarto-figure,
+section {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+.highcharts-container,
+.html-widget,
+.htmlwidget {
+  overflow: visible !important;
+}
+</style>
+<script>
+(function() {
+  function reflowCharts() {
+    if (typeof Highcharts !== 'undefined' && Highcharts.charts) {
+      Highcharts.charts.forEach(function(c) { if (c) try { c.reflow(); } catch(e) {} });
+    }
+  }
+  [0, 100, 250, 500, 1000, 2000].forEach(function(d) {
+    setTimeout(function() { window.dispatchEvent(new Event('resize')); requestAnimationFrame(reflowCharts); }, d);
+  });
+  document.addEventListener('click', function(e) {
+    if (e.target.matches('.nav-link, [data-bs-toggle="tab"]')) setTimeout(reflowCharts, 50);
+  });
+})();
+</script>
+
+<link rel="stylesheet" href="assets/accessibility.css?v=20260305123620">
+<script src="assets/accessibility.js?v=20260305123620"></script>
+<section id="total-breakdown-by-survey-status" class="level2">
+<h2 class="anchored" data-anchor-id="total-breakdown-by-survey-status">Total breakdown by survey status</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="highchart html-widget html-fill-item" id="htmlwidget-f3f03b02ef39b0b864ae" style="width:100%;height:433px;"></div>
+<script type="application/json" data-for="htmlwidget-f3f03b02ef39b0b864ae">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"treemap","height":500},"title":{"text":"Total breakdown by survey status"},"yAxis":{"title":{"text":null}},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"series":[{"data":[{"name":"confirmed","value":82,"colorValue":82},{"name":"pending","value":113,"colorValue":113},{"name":"rejected","value":1044,"colorValue":1044},{"name":"verified","value":10902,"colorValue":10902}],"type":"treemap","layoutAlgorithm":"squarified","allowDrillToNode":false,"levelIsConstant":false,"levels":[{"level":1,"dataLabels":{"enabled":true,"style":{"fontSize":"14px","fontWeight":"bold"}},"borderWidth":2,"borderColor":"#FFFFFF"},{"level":2,"dataLabels":{"enabled":true,"style":{"fontSize":"11px"}},"borderWidth":1,"borderColor":"#FFFFFF"}]}],"tooltip":{"pointFormat":"<b>{point.name}<\/b>: {point.value:,.0f}"},"colorAxis":{"minColor":"#e8f4fc","maxColor":"#1a5276"},"legend":{"enabled":false}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":{"render":[{"code":"function(el, x) {  if (window.dashboardrRegisterChart) {    window.dashboardrRegisterChart({      id: 'dr_chart_ea49f57b0a',      backend: 'highcharter',      el: el,      x: x,      filterVars: null    });  }}","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="survey-status" class="level2">
+<h2 class="anchored" data-anchor-id="survey-status">Survey status</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Survey status by observer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Survey status by farm</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div class="highchart html-widget html-fill-item" id="htmlwidget-1ad9844a302b3ed5c892" style="width:100%;height:433px;"></div>
+<script type="application/json" data-for="htmlwidget-1ad9844a302b3ed5c892">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Survey status by observer"},"yAxis":{"title":{"text":"Count"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":true},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}},"column":{"stacking":"normal","dataLabels":{"enabled":true,"formatter":"function() { if (this.percentage < 5) return ''; return this.y.toFixed(0); }","style":{"textOutline":"none","fontSize":"10px"}}}},"series":[{"name":"confirmed","data":[{".x_var_col":"Biochar10",".stack_var_col":"confirmed","n":24,"y":24,"name":"Biochar10"},{".x_var_col":"Biochar11",".stack_var_col":"confirmed","n":29,"y":29,"name":"Biochar11"},{".x_var_col":"Biochar12",".stack_var_col":"confirmed","n":2,"y":2,"name":"Biochar12"},{".x_var_col":"biochar43",".stack_var_col":"confirmed","n":3,"y":3,"name":"biochar43"},{".x_var_col":"biochar45",".stack_var_col":"confirmed","n":15,"y":15,"name":"biochar45"},{".x_var_col":"Biochar5",".stack_var_col":"confirmed","n":3,"y":3,"name":"Biochar5"},{".x_var_col":"biochar61",".stack_var_col":"confirmed","n":1,"y":1,"name":"biochar61"},{".x_var_col":"Ruben",".stack_var_col":"confirmed","n":5,"y":5,"name":"Ruben"}],"type":"column"},{"name":"pending","data":[{".x_var_col":"biochar 55",".stack_var_col":"pending","n":3,"y":3,"name":"biochar 55"},{".x_var_col":"Biochar14",".stack_var_col":"pending","n":8,"y":8,"name":"Biochar14"},{".x_var_col":"Biochar15",".stack_var_col":"pending","n":40,"y":40,"name":"Biochar15"},{".x_var_col":"Biochar29",".stack_var_col":"pending","n":41,"y":41,"name":"Biochar29"},{".x_var_col":"Biochar4",".stack_var_col":"pending","n":1,"y":1,"name":"Biochar4"},{".x_var_col":"biochar45",".stack_var_col":"pending","n":16,"y":16,"name":"biochar45"},{".x_var_col":"biochar61",".stack_var_col":"pending","n":4,"y":4,"name":"biochar61"}],"type":"column"},{"name":"rejected","data":[{".x_var_col":"Biochar 48",".stack_var_col":"rejected","n":110,"y":110,"name":"Biochar 48"},{".x_var_col":"biochar 55",".stack_var_col":"rejected","n":2,"y":2,"name":"biochar 55"},{".x_var_col":"biochar 58",".stack_var_col":"rejected","n":1,"y":1,"name":"biochar 58"},{".x_var_col":"Biochar10",".stack_var_col":"rejected","n":38,"y":38,"name":"Biochar10"},{".x_var_col":"Biochar11",".stack_var_col":"rejected","n":122,"y":122,"name":"Biochar11"},{".x_var_col":"Biochar12",".stack_var_col":"rejected","n":209,"y":209,"name":"Biochar12"},{".x_var_col":"Biochar15",".stack_var_col":"rejected","n":20,"y":20,"name":"Biochar15"},{".x_var_col":"Biochar16",".stack_var_col":"rejected","n":17,"y":17,"name":"Biochar16"},{".x_var_col":"Biochar17",".stack_var_col":"rejected","n":7,"y":7,"name":"Biochar17"},{".x_var_col":"Biochar19",".stack_var_col":"rejected","n":2,"y":2,"name":"Biochar19"},{".x_var_col":"Biochar2",".stack_var_col":"rejected","n":4,"y":4,"name":"Biochar2"},{".x_var_col":"Biochar21",".stack_var_col":"rejected","n":2,"y":2,"name":"Biochar21"},{".x_var_col":"Biochar23",".stack_var_col":"rejected","n":3,"y":3,"name":"Biochar23"},{".x_var_col":"Biochar26",".stack_var_col":"rejected","n":3,"y":3,"name":"Biochar26"},{".x_var_col":"Biochar3",".stack_var_col":"rejected","n":6,"y":6,"name":"Biochar3"},{".x_var_col":"Biochar4",".stack_var_col":"rejected","n":1,"y":1,"name":"Biochar4"},{".x_var_col":"biochar43",".stack_var_col":"rejected","n":81,"y":81,"name":"biochar43"},{".x_var_col":"biochar45",".stack_var_col":"rejected","n":131,"y":131,"name":"biochar45"},{".x_var_col":"biochar47",".stack_var_col":"rejected","n":95,"y":95,"name":"biochar47"},{".x_var_col":"Biochar5",".stack_var_col":"rejected","n":4,"y":4,"name":"Biochar5"},{".x_var_col":"biochar57",".stack_var_col":"rejected","n":3,"y":3,"name":"biochar57"},{".x_var_col":"biochar60",".stack_var_col":"rejected","n":12,"y":12,"name":"biochar60"},{".x_var_col":"biochar61",".stack_var_col":"rejected","n":38,"y":38,"name":"biochar61"},{".x_var_col":"Biochar62",".stack_var_col":"rejected","n":118,"y":118,"name":"Biochar62"},{".x_var_col":"Biochar63",".stack_var_col":"rejected","n":1,"y":1,"name":"Biochar63"},{".x_var_col":"Godzo Kofitse",".stack_var_col":"rejected","n":4,"y":4,"name":"Godzo Kofitse"},{".x_var_col":"Ruben",".stack_var_col":"rejected","n":10,"y":10,"name":"Ruben"}],"type":"column"},{"name":"verified","data":[{".x_var_col":"Biochar 46",".stack_var_col":"verified","n":54,"y":54,"name":"Biochar 46"},{".x_var_col":"Biochar 48",".stack_var_col":"verified","n":635,"y":635,"name":"Biochar 48"},{".x_var_col":"biochar 55",".stack_var_col":"verified","n":107,"y":107,"name":"biochar 55"},{".x_var_col":"Biochar10",".stack_var_col":"verified","n":836,"y":836,"name":"Biochar10"},{".x_var_col":"Biochar11",".stack_var_col":"verified","n":1217,"y":1217,"name":"Biochar11"},{".x_var_col":"Biochar12",".stack_var_col":"verified","n":697,"y":697,"name":"Biochar12"},{".x_var_col":"Biochar14",".stack_var_col":"verified","n":48,"y":48,"name":"Biochar14"},{".x_var_col":"Biochar15",".stack_var_col":"verified","n":152,"y":152,"name":"Biochar15"},{".x_var_col":"Biochar16",".stack_var_col":"verified","n":721,"y":721,"name":"Biochar16"},{".x_var_col":"Biochar17",".stack_var_col":"verified","n":53,"y":53,"name":"Biochar17"},{".x_var_col":"Biochar19",".stack_var_col":"verified","n":274,"y":274,"name":"Biochar19"},{".x_var_col":"Biochar2",".stack_var_col":"verified","n":69,"y":69,"name":"Biochar2"},{".x_var_col":"Biochar21",".stack_var_col":"verified","n":15,"y":15,"name":"Biochar21"},{".x_var_col":"Biochar23",".stack_var_col":"verified","n":7,"y":7,"name":"Biochar23"},{".x_var_col":"Biochar25",".stack_var_col":"verified","n":3,"y":3,"name":"Biochar25"},{".x_var_col":"Biochar26",".stack_var_col":"verified","n":88,"y":88,"name":"Biochar26"},{".x_var_col":"Biochar29",".stack_var_col":"verified","n":26,"y":26,"name":"Biochar29"},{".x_var_col":"Biochar3",".stack_var_col":"verified","n":61,"y":61,"name":"Biochar3"},{".x_var_col":"Biochar4",".stack_var_col":"verified","n":27,"y":27,"name":"Biochar4"},{".x_var_col":"biochar43",".stack_var_col":"verified","n":622,"y":622,"name":"biochar43"},{".x_var_col":"biochar45",".stack_var_col":"verified","n":726,"y":726,"name":"biochar45"},{".x_var_col":"biochar47",".stack_var_col":"verified","n":1310,"y":1310,"name":"biochar47"},{".x_var_col":"Biochar5",".stack_var_col":"verified","n":139,"y":139,"name":"Biochar5"},{".x_var_col":"biochar57",".stack_var_col":"verified","n":101,"y":101,"name":"biochar57"},{".x_var_col":"Biochar59",".stack_var_col":"verified","n":7,"y":7,"name":"Biochar59"},{".x_var_col":"biochar60",".stack_var_col":"verified","n":278,"y":278,"name":"biochar60"},{".x_var_col":"biochar61",".stack_var_col":"verified","n":417,"y":417,"name":"biochar61"},{".x_var_col":"Biochar62",".stack_var_col":"verified","n":358,"y":358,"name":"Biochar62"},{".x_var_col":"Godzo Kofitse",".stack_var_col":"verified","n":536,"y":536,"name":"Godzo Kofitse"},{".x_var_col":"Ruben",".stack_var_col":"verified","n":1318,"y":1318,"name":"Ruben"}],"type":"column"}],"xAxis":{"type":"category","title":{"text":""},"categories":["Biochar 46","Biochar 48","biochar 55","biochar 58","Biochar10","Biochar11","Biochar12","Biochar14","Biochar15","Biochar16","Biochar17","Biochar19","Biochar2","Biochar21","Biochar23","Biochar25","Biochar26","Biochar29","Biochar3","Biochar4","biochar43","biochar45","biochar47","Biochar5","biochar57","Biochar59","biochar60","biochar61","Biochar62","Biochar63","Godzo Kofitse","Ruben"]},"legend":{"title":{"text":"Survey status"}},"tooltip":{"formatter":"function() {\n          var value = this.y;\n          var totalValue = ((this.point && this.point.stackTotal != null) ? this.point.stackTotal : ((this.total != null) ? this.total : this.y));\n          var categoryLabel = this.point.category || this.series.chart.xAxis[0].categories[this.point.x] || this.x;\n          return '<b>' + categoryLabel + '<\/b><br/>' +\n                 this.series.name + ': ' + value + '<br/>' +\n                 'Total: ' + totalValue;\n        }"}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.plotOptions.column.dataLabels.formatter","hc_opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"function(el, x) {  if (window.dashboardrRegisterChart) {    window.dashboardrRegisterChart({      id: 'dr_chart_00b95b5b67',      backend: 'highcharter',      el: el,      x: x,      filterVars: null    });  }}","data":null}]}}</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div class="highchart html-widget html-fill-item" id="htmlwidget-91a532c434755ac8db93" style="width:100%;height:433px;"></div>
+<script type="application/json" data-for="htmlwidget-91a532c434755ac8db93">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Survey status by farm"},"yAxis":{"title":{"text":"Count"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":true},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}},"column":{"stacking":"normal","dataLabels":{"enabled":true,"formatter":"function() { if (this.percentage < 5) return ''; return this.y.toFixed(0); }","style":{"textOutline":"none","fontSize":"10px"}}}},"series":[{"name":"confirmed","data":[{".x_var_col":"ABABIO $ CO FARMS AC220",".stack_var_col":"confirmed","n":1,"y":1,"name":"ABABIO $ CO FARMS AC220"},{".x_var_col":"Adiembra group",".stack_var_col":"confirmed","n":2,"y":2,"name":"Adiembra group"},{".x_var_col":"Amos ",".stack_var_col":"confirmed","n":2,"y":2,"name":"Amos "},{".x_var_col":"Ashanti Group 6",".stack_var_col":"confirmed","n":1,"y":1,"name":"Ashanti Group 6"},{".x_var_col":"BOAKYE VILLAGE 2 AC218",".stack_var_col":"confirmed","n":1,"y":1,"name":"BOAKYE VILLAGE 2 AC218"},{".x_var_col":"Charles ",".stack_var_col":"confirmed","n":5,"y":5,"name":"Charles "},{".x_var_col":"Daapa Junction",".stack_var_col":"confirmed","n":3,"y":3,"name":"Daapa Junction"},{".x_var_col":"Dapaa Group",".stack_var_col":"confirmed","n":1,"y":1,"name":"Dapaa Group"},{".x_var_col":"Dodi  PaPasi group",".stack_var_col":"confirmed","n":3,"y":3,"name":"Dodi  PaPasi group"},{".x_var_col":"Dormenu",".stack_var_col":"confirmed","n":1,"y":1,"name":"Dormenu"},{".x_var_col":"Efo Mensah",".stack_var_col":"confirmed","n":5,"y":5,"name":"Efo Mensah"},{".x_var_col":"ELIKPLIM GROUP",".stack_var_col":"confirmed","n":2,"y":2,"name":"ELIKPLIM GROUP"},{".x_var_col":"Francis ",".stack_var_col":"confirmed","n":5,"y":5,"name":"Francis "},{".x_var_col":"Gada Bright",".stack_var_col":"confirmed","n":2,"y":2,"name":"Gada Bright"},{".x_var_col":"Gogo group",".stack_var_col":"confirmed","n":1,"y":1,"name":"Gogo group"},{".x_var_col":"Isaac Totokadi",".stack_var_col":"confirmed","n":1,"y":1,"name":"Isaac Totokadi"},{".x_var_col":"Ken ",".stack_var_col":"confirmed","n":2,"y":2,"name":"Ken "},{".x_var_col":"Kenet ",".stack_var_col":"confirmed","n":3,"y":3,"name":"Kenet "},{".x_var_col":"kokoti Group",".stack_var_col":"confirmed","n":1,"y":1,"name":"kokoti Group"},{".x_var_col":"kukurantumi Group",".stack_var_col":"confirmed","n":1,"y":1,"name":"kukurantumi Group"},{".x_var_col":"Kweku ",".stack_var_col":"confirmed","n":7,"y":7,"name":"Kweku "},{".x_var_col":"Mangoase group",".stack_var_col":"confirmed","n":2,"y":2,"name":"Mangoase group"},{".x_var_col":"Martha Dzreke",".stack_var_col":"confirmed","n":1,"y":1,"name":"Martha Dzreke"},{".x_var_col":"Mr Dza Group",".stack_var_col":"confirmed","n":1,"y":1,"name":"Mr Dza Group"},{".x_var_col":"Mr Getumah Seth",".stack_var_col":"confirmed","n":5,"y":5,"name":"Mr Getumah Seth"},{".x_var_col":"Mr john",".stack_var_col":"confirmed","n":2,"y":2,"name":"Mr john"},{".x_var_col":"Mr Wosenya",".stack_var_col":"confirmed","n":3,"y":3,"name":"Mr Wosenya"},{".x_var_col":"New Town group",".stack_var_col":"confirmed","n":2,"y":2,"name":"New Town group"},{".x_var_col":"PRECIOUS LAMB FARM AC 219",".stack_var_col":"confirmed","n":1,"y":1,"name":"PRECIOUS LAMB FARM AC 219"},{".x_var_col":"selorm",".stack_var_col":"confirmed","n":4,"y":4,"name":"selorm"},{".x_var_col":"Star Group",".stack_var_col":"confirmed","n":1,"y":1,"name":"Star Group"},{".x_var_col":"Tokurono",".stack_var_col":"confirmed","n":1,"y":1,"name":"Tokurono"},{".x_var_col":"Torgbe",".stack_var_col":"confirmed","n":4,"y":4,"name":"Torgbe"},{".x_var_col":"Torgbe Attavi",".stack_var_col":"confirmed","n":3,"y":3,"name":"Torgbe Attavi"},{".x_var_col":"Zongo group",".stack_var_col":"confirmed","n":2,"y":2,"name":"Zongo group"}],"type":"column"},{"name":"pending","data":[{".x_var_col":"Ahamans Nkorsuo 1",".stack_var_col":"pending","n":8,"y":8,"name":"Ahamans Nkorsuo 1"},{".x_var_col":"Ahamansu Nkorsuo 2",".stack_var_col":"pending","n":10,"y":10,"name":"Ahamansu Nkorsuo 2"},{".x_var_col":"Ashanti group 1",".stack_var_col":"pending","n":1,"y":1,"name":"Ashanti group 1"},{".x_var_col":"Ashanti Group 3",".stack_var_col":"pending","n":1,"y":1,"name":"Ashanti Group 3"},{".x_var_col":"Ashanti Group 4",".stack_var_col":"pending","n":1,"y":1,"name":"Ashanti Group 4"},{".x_var_col":"Ashanti Group 8",".stack_var_col":"pending","n":1,"y":1,"name":"Ashanti Group 8"},{".x_var_col":"Ayoma farmers coop 1",".stack_var_col":"pending","n":1,"y":1,"name":"Ayoma farmers coop 1"},{".x_var_col":"Baika Cocoa farmers group 1",".stack_var_col":"pending","n":10,"y":10,"name":"Baika Cocoa farmers group 1"},{".x_var_col":"Baika cocoa farmers group 2",".stack_var_col":"pending","n":6,"y":6,"name":"Baika cocoa farmers group 2"},{".x_var_col":"borey 2",".stack_var_col":"pending","n":1,"y":1,"name":"borey 2"},{".x_var_col":"Bralode cocoa farmers coop",".stack_var_col":"pending","n":1,"y":1,"name":"Bralode cocoa farmers coop"},{".x_var_col":"Joel",".stack_var_col":"pending","n":7,"y":7,"name":"Joel"},{".x_var_col":"kukurantumi cocoa farmers coop 1",".stack_var_col":"pending","n":12,"y":12,"name":"kukurantumi cocoa farmers coop 1"},{".x_var_col":"kukurantumi cocoa farmers coop 2",".stack_var_col":"pending","n":11,"y":11,"name":"kukurantumi cocoa farmers coop 2"},{".x_var_col":"Liati Wote Afadzato Norvisi Co-operative 1",".stack_var_col":"pending","n":1,"y":1,"name":"Liati Wote Afadzato Norvisi Co-operative 1"},{".x_var_col":"Liati Wote Afadzato Norvisi Co-operative 2",".stack_var_col":"pending","n":2,"y":2,"name":"Liati Wote Afadzato Norvisi Co-operative 2"},{".x_var_col":"Liati Wote Afadzato Norvisi Co-operative 3",".stack_var_col":"pending","n":5,"y":5,"name":"Liati Wote Afadzato Norvisi Co-operative 3"},{".x_var_col":"Mose group",".stack_var_col":"pending","n":5,"y":5,"name":"Mose group"},{".x_var_col":"Nahene 3, Amansie West District ",".stack_var_col":"pending","n":3,"y":3,"name":"Nahene 3, Amansie West District "},{".x_var_col":"Tsikata Deworwornye 1",".stack_var_col":"pending","n":8,"y":8,"name":"Tsikata Deworwornye 1"},{".x_var_col":"Tsikata Deworwornye 2",".stack_var_col":"pending","n":7,"y":7,"name":"Tsikata Deworwornye 2"},{".x_var_col":"Tsikata Deworwornye 3",".stack_var_col":"pending","n":7,"y":7,"name":"Tsikata Deworwornye 3"},{".x_var_col":"Wassah Group",".stack_var_col":"pending","n":4,"y":4,"name":"Wassah Group"}],"type":"column"},{"name":"rejected","data":[{".x_var_col":"Abofla Group",".stack_var_col":"rejected","n":2,"y":2,"name":"Abofla Group"},{".x_var_col":"Ada Korpe Mawunyo 1 ",".stack_var_col":"rejected","n":3,"y":3,"name":"Ada Korpe Mawunyo 1 "},{".x_var_col":"Ada Korpe Mawunyo 2",".stack_var_col":"rejected","n":2,"y":2,"name":"Ada Korpe Mawunyo 2"},{".x_var_col":"Adiembra group",".stack_var_col":"rejected","n":20,"y":20,"name":"Adiembra group"},{".x_var_col":"Adzoko",".stack_var_col":"rejected","n":1,"y":1,"name":"Adzoko"},{".x_var_col":"Adzovi ",".stack_var_col":"rejected","n":1,"y":1,"name":"Adzovi "},{".x_var_col":"Afawuah Group ",".stack_var_col":"rejected","n":3,"y":3,"name":"Afawuah Group "},{".x_var_col":"Agbado ",".stack_var_col":"rejected","n":1,"y":1,"name":"Agbado "},{".x_var_col":"Agbavo",".stack_var_col":"rejected","n":9,"y":9,"name":"Agbavo"},{".x_var_col":"Ahamans Nkorsuo 1",".stack_var_col":"rejected","n":4,"y":4,"name":"Ahamans Nkorsuo 1"},{".x_var_col":"Ahamansu Group",".stack_var_col":"rejected","n":8,"y":8,"name":"Ahamansu Group"},{".x_var_col":"Ahamansu Nkorsuo 2",".stack_var_col":"rejected","n":2,"y":2,"name":"Ahamansu Nkorsuo 2"},{".x_var_col":"Akorfafa",".stack_var_col":"rejected","n":1,"y":1,"name":"Akorfafa"},{".x_var_col":"Akorli",".stack_var_col":"rejected","n":1,"y":1,"name":"Akorli"},{".x_var_col":"Akum Group",".stack_var_col":"rejected","n":10,"y":10,"name":"Akum Group"},{".x_var_col":"Akwausu Group",".stack_var_col":"rejected","n":11,"y":11,"name":"Akwausu Group"},{".x_var_col":"AMETEPE ",".stack_var_col":"rejected","n":2,"y":2,"name":"AMETEPE "},{".x_var_col":"Amos ",".stack_var_col":"rejected","n":4,"y":4,"name":"Amos "},{".x_var_col":"Ampeyo  Group",".stack_var_col":"rejected","n":15,"y":15,"name":"Ampeyo  Group"},{".x_var_col":"Arhin",".stack_var_col":"rejected","n":11,"y":11,"name":"Arhin"},{".x_var_col":"Ashanti group 1",".stack_var_col":"rejected","n":4,"y":4,"name":"Ashanti group 1"},{".x_var_col":"Ashanti Group 2",".stack_var_col":"rejected","n":2,"y":2,"name":"Ashanti Group 2"},{".x_var_col":"Ashanti Group 3",".stack_var_col":"rejected","n":5,"y":5,"name":"Ashanti Group 3"},{".x_var_col":"Ashanti Group 4",".stack_var_col":"rejected","n":7,"y":7,"name":"Ashanti Group 4"},{".x_var_col":"Ashanti Group 5",".stack_var_col":"rejected","n":3,"y":3,"name":"Ashanti Group 5"},{".x_var_col":"Ashanti Group 6",".stack_var_col":"rejected","n":1,"y":1,"name":"Ashanti Group 6"},{".x_var_col":"Ashanti Group 7",".stack_var_col":"rejected","n":6,"y":6,"name":"Ashanti Group 7"},{".x_var_col":"Ashanti Group 8",".stack_var_col":"rejected","n":5,"y":5,"name":"Ashanti Group 8"},{".x_var_col":"Ashanti Group 9",".stack_var_col":"rejected","n":5,"y":5,"name":"Ashanti Group 9"},{".x_var_col":"Ashbre Town ",".stack_var_col":"rejected","n":1,"y":1,"name":"Ashbre Town "},{".x_var_col":"Atta",".stack_var_col":"rejected","n":1,"y":1,"name":"Atta"},{".x_var_col":"Atta Kofi",".stack_var_col":"rejected","n":11,"y":11,"name":"Atta Kofi"},{".x_var_col":"Avanko",".stack_var_col":"rejected","n":1,"y":1,"name":"Avanko"},{".x_var_col":"Beatrice Group",".stack_var_col":"rejected","n":1,"y":1,"name":"Beatrice Group"},{".x_var_col":"Ben Ninya",".stack_var_col":"rejected","n":10,"y":10,"name":"Ben Ninya"},{".x_var_col":"Benedicta Gada",".stack_var_col":"rejected","n":1,"y":1,"name":"Benedicta Gada"},{".x_var_col":"Bisakrom Group",".stack_var_col":"rejected","n":5,"y":5,"name":"Bisakrom Group"},{".x_var_col":"Bisakrom Group ",".stack_var_col":"rejected","n":7,"y":7,"name":"Bisakrom Group "},{".x_var_col":"BOAKYE VILLAGE 2 AC218",".stack_var_col":"rejected","n":1,"y":1,"name":"BOAKYE VILLAGE 2 AC218"},{".x_var_col":"Bob Akura Group",".stack_var_col":"rejected","n":3,"y":3,"name":"Bob Akura Group"},{".x_var_col":"borey 5",".stack_var_col":"rejected","n":1,"y":1,"name":"borey 5"},{".x_var_col":"borimanga",".stack_var_col":"rejected","n":1,"y":1,"name":"borimanga"},{".x_var_col":"Borimanga",".stack_var_col":"rejected","n":11,"y":11,"name":"Borimanga"},{".x_var_col":"Borlor junction Group",".stack_var_col":"rejected","n":5,"y":5,"name":"Borlor junction Group"},{".x_var_col":"Bumbusu Group",".stack_var_col":"rejected","n":12,"y":12,"name":"Bumbusu Group"},{".x_var_col":"Charles ",".stack_var_col":"rejected","n":5,"y":5,"name":"Charles "},{".x_var_col":"Chris ",".stack_var_col":"rejected","n":1,"y":1,"name":"Chris "},{".x_var_col":"Daapa Junction",".stack_var_col":"rejected","n":17,"y":17,"name":"Daapa Junction"},{".x_var_col":"Dapaa Amanta",".stack_var_col":"rejected","n":6,"y":6,"name":"Dapaa Amanta"},{".x_var_col":"Dapaa Fabinso",".stack_var_col":"rejected","n":7,"y":7,"name":"Dapaa Fabinso"},{".x_var_col":"Dapaa Group",".stack_var_col":"rejected","n":15,"y":15,"name":"Dapaa Group"},{".x_var_col":"Dapaa Group ",".stack_var_col":"rejected","n":7,"y":7,"name":"Dapaa Group "},{".x_var_col":"Dapaa Pack",".stack_var_col":"rejected","n":1,"y":1,"name":"Dapaa Pack"},{".x_var_col":"Dodi  PaPasi group",".stack_var_col":"rejected","n":19,"y":19,"name":"Dodi  PaPasi group"},{".x_var_col":"Dodo Akum Group",".stack_var_col":"rejected","n":10,"y":10,"name":"Dodo Akum Group"},{".x_var_col":"Dodo Tamale",".stack_var_col":"rejected","n":11,"y":11,"name":"Dodo Tamale"},{".x_var_col":"Dohanaayili",".stack_var_col":"rejected","n":7,"y":7,"name":"Dohanaayili"},{".x_var_col":"DOMINION POWER AC 216",".stack_var_col":"rejected","n":2,"y":2,"name":"DOMINION POWER AC 216"},{".x_var_col":"Dormenu",".stack_var_col":"rejected","n":1,"y":1,"name":"Dormenu"},{".x_var_col":"Dzidudu cocoa faermers2",".stack_var_col":"rejected","n":2,"y":2,"name":"Dzidudu cocoa faermers2"},{".x_var_col":"Dzidudu cocoa Farmers coop1",".stack_var_col":"rejected","n":1,"y":1,"name":"Dzidudu cocoa Farmers coop1"},{".x_var_col":"Dzifa ",".stack_var_col":"rejected","n":2,"y":2,"name":"Dzifa "},{".x_var_col":"Dzigbordi ",".stack_var_col":"rejected","n":1,"y":1,"name":"Dzigbordi "},{".x_var_col":"Dzordzikodzi Group",".stack_var_col":"rejected","n":23,"y":23,"name":"Dzordzikodzi Group"},{".x_var_col":"Efo Mensah",".stack_var_col":"rejected","n":1,"y":1,"name":"Efo Mensah"},{".x_var_col":"EFo.Mensah ",".stack_var_col":"rejected","n":15,"y":15,"name":"EFo.Mensah "},{".x_var_col":"Elikplim group ",".stack_var_col":"rejected","n":12,"y":12,"name":"Elikplim group "},{".x_var_col":"Esreso group",".stack_var_col":"rejected","n":15,"y":15,"name":"Esreso group"},{".x_var_col":"Fafali ",".stack_var_col":"rejected","n":1,"y":1,"name":"Fafali "},{".x_var_col":"Francis ",".stack_var_col":"rejected","n":6,"y":6,"name":"Francis "},{".x_var_col":"Fudu",".stack_var_col":"rejected","n":10,"y":10,"name":"Fudu"},{".x_var_col":"Gada Bright",".stack_var_col":"rejected","n":3,"y":3,"name":"Gada Bright"},{".x_var_col":"Ganyo",".stack_var_col":"rejected","n":1,"y":1,"name":"Ganyo"},{".x_var_col":"Godfred Group ",".stack_var_col":"rejected","n":2,"y":2,"name":"Godfred Group "},{".x_var_col":"Gogo group",".stack_var_col":"rejected","n":5,"y":5,"name":"Gogo group"},{".x_var_col":"Gyebi Group",".stack_var_col":"rejected","n":4,"y":4,"name":"Gyebi Group"},{".x_var_col":"Isaac Totokadi",".stack_var_col":"rejected","n":1,"y":1,"name":"Isaac Totokadi"},{".x_var_col":"jasikan",".stack_var_col":"rejected","n":2,"y":2,"name":"jasikan"},{".x_var_col":"Jasikan",".stack_var_col":"rejected","n":4,"y":4,"name":"Jasikan"},{".x_var_col":"jasikan ",".stack_var_col":"rejected","n":2,"y":2,"name":"jasikan "},{".x_var_col":"Jasikan ",".stack_var_col":"rejected","n":3,"y":3,"name":"Jasikan "},{".x_var_col":"JASIKAN ",".stack_var_col":"rejected","n":1,"y":1,"name":"JASIKAN "},{".x_var_col":"Joel",".stack_var_col":"rejected","n":1,"y":1,"name":"Joel"},{".x_var_col":"John ",".stack_var_col":"rejected","n":16,"y":16,"name":"John "},{".x_var_col":"Kaniago 1, Amansie West District Coop ",".stack_var_col":"rejected","n":1,"y":1,"name":"Kaniago 1, Amansie West District Coop "},{".x_var_col":"Ken ",".stack_var_col":"rejected","n":9,"y":9,"name":"Ken "},{".x_var_col":"Kenet ",".stack_var_col":"rejected","n":4,"y":4,"name":"Kenet "},{".x_var_col":"Kimonbaan ",".stack_var_col":"rejected","n":1,"y":1,"name":"Kimonbaan "},{".x_var_col":"kokoti Group",".stack_var_col":"rejected","n":25,"y":25,"name":"kokoti Group"},{".x_var_col":"Konsuaso Group",".stack_var_col":"rejected","n":25,"y":25,"name":"Konsuaso Group"},{".x_var_col":"Koowa",".stack_var_col":"rejected","n":11,"y":11,"name":"Koowa"},{".x_var_col":"koru Group",".stack_var_col":"rejected","n":27,"y":27,"name":"koru Group"},{".x_var_col":"Kosomba group 2",".stack_var_col":"rejected","n":2,"y":2,"name":"Kosomba group 2"},{".x_var_col":"Krongtan town ",".stack_var_col":"rejected","n":1,"y":1,"name":"Krongtan town "},{".x_var_col":"kukoo",".stack_var_col":"rejected","n":2,"y":2,"name":"kukoo"},{".x_var_col":"kukou",".stack_var_col":"rejected","n":15,"y":15,"name":"kukou"},{".x_var_col":"kukurantumi Group",".stack_var_col":"rejected","n":22,"y":22,"name":"kukurantumi Group"},{".x_var_col":"Kunda Group",".stack_var_col":"rejected","n":29,"y":29,"name":"Kunda Group"},{".x_var_col":"Kweku ",".stack_var_col":"rejected","n":6,"y":6,"name":"Kweku "},{".x_var_col":"Manaf",".stack_var_col":"rejected","n":9,"y":9,"name":"Manaf"},{".x_var_col":"Mangoase group",".stack_var_col":"rejected","n":16,"y":16,"name":"Mangoase group"},{".x_var_col":"Mangsongsim",".stack_var_col":"rejected","n":10,"y":10,"name":"Mangsongsim"},{".x_var_col":"Martha Dzreke",".stack_var_col":"rejected","n":1,"y":1,"name":"Martha Dzreke"},{".x_var_col":"Mawuena",".stack_var_col":"rejected","n":6,"y":6,"name":"Mawuena"},{".x_var_col":"Mawunyo",".stack_var_col":"rejected","n":2,"y":2,"name":"Mawunyo"},{".x_var_col":"Mensah Bismark Kwaku",".stack_var_col":"rejected","n":1,"y":1,"name":"Mensah Bismark Kwaku"},{".x_var_col":"Milenorvisi",".stack_var_col":"rejected","n":1,"y":1,"name":"Milenorvisi"},{".x_var_col":"Mpreniase 2 Amansea Wast District Coop ",".stack_var_col":"rejected","n":1,"y":1,"name":"Mpreniase 2 Amansea Wast District Coop "},{".x_var_col":"Mr Dza Group",".stack_var_col":"rejected","n":13,"y":13,"name":"Mr Dza Group"},{".x_var_col":"Mr. Gertumah Seth ",".stack_var_col":"rejected","n":11,"y":11,"name":"Mr. Gertumah Seth "},{".x_var_col":"Mr.wosenya ",".stack_var_col":"rejected","n":13,"y":13,"name":"Mr.wosenya "},{".x_var_col":"Neesim Vela",".stack_var_col":"rejected","n":11,"y":11,"name":"Neesim Vela"},{".x_var_col":"New Town group",".stack_var_col":"rejected","n":1,"y":1,"name":"New Town group"},{".x_var_col":"Norvisi Cocoa farmers coop 5",".stack_var_col":"rejected","n":1,"y":1,"name":"Norvisi Cocoa farmers coop 5"},{".x_var_col":"Npopiin",".stack_var_col":"rejected","n":1,"y":1,"name":"Npopiin"},{".x_var_col":"Nsambaan Group ",".stack_var_col":"rejected","n":1,"y":1,"name":"Nsambaan Group "},{".x_var_col":"NUNANA ",".stack_var_col":"rejected","n":3,"y":3,"name":"NUNANA "},{".x_var_col":"Nunana group",".stack_var_col":"rejected","n":1,"y":1,"name":"Nunana group"},{".x_var_col":"Nyalbaan Group ",".stack_var_col":"rejected","n":1,"y":1,"name":"Nyalbaan Group "},{".x_var_col":"Nyame",".stack_var_col":"rejected","n":8,"y":8,"name":"Nyame"},{".x_var_col":"Odumasi Town",".stack_var_col":"rejected","n":3,"y":3,"name":"Odumasi Town"},{".x_var_col":"Pampawie Group",".stack_var_col":"rejected","n":11,"y":11,"name":"Pampawie Group"},{".x_var_col":"Pampawie Group ",".stack_var_col":"rejected","n":3,"y":3,"name":"Pampawie Group "},{".x_var_col":"PAMPAWIE Star ",".stack_var_col":"rejected","n":11,"y":11,"name":"PAMPAWIE Star "},{".x_var_col":"Pampawie Star Group",".stack_var_col":"rejected","n":6,"y":6,"name":"Pampawie Star Group"},{".x_var_col":"Pat",".stack_var_col":"rejected","n":1,"y":1,"name":"Pat"},{".x_var_col":"PRECIOUS LAMB FARM AC 219",".stack_var_col":"rejected","n":1,"y":1,"name":"PRECIOUS LAMB FARM AC 219"},{".x_var_col":"s k ofori group",".stack_var_col":"rejected","n":5,"y":5,"name":"s k ofori group"},{".x_var_col":"Sabah Group",".stack_var_col":"rejected","n":1,"y":1,"name":"Sabah Group"},{".x_var_col":"Salifu Ekyan 1",".stack_var_col":"rejected","n":2,"y":2,"name":"Salifu Ekyan 1"},{".x_var_col":"Salifu Ekyan 2",".stack_var_col":"rejected","n":1,"y":1,"name":"Salifu Ekyan 2"},{".x_var_col":"Salifu Group",".stack_var_col":"rejected","n":22,"y":22,"name":"Salifu Group"},{".x_var_col":"Sanko Group",".stack_var_col":"rejected","n":17,"y":17,"name":"Sanko Group"},{".x_var_col":"selorm",".stack_var_col":"rejected","n":12,"y":12,"name":"selorm"},{".x_var_col":"Shikurduu",".stack_var_col":"rejected","n":11,"y":11,"name":"Shikurduu"},{".x_var_col":"Silimboma",".stack_var_col":"rejected","n":11,"y":11,"name":"Silimboma"},{".x_var_col":"Star Group",".stack_var_col":"rejected","n":12,"y":12,"name":"Star Group"},{".x_var_col":"Sule",".stack_var_col":"rejected","n":9,"y":9,"name":"Sule"},{".x_var_col":"Teacher",".stack_var_col":"rejected","n":11,"y":11,"name":"Teacher"},{".x_var_col":"Tikpaan Binagando ",".stack_var_col":"rejected","n":1,"y":1,"name":"Tikpaan Binagando "},{".x_var_col":"Todome Road Group",".stack_var_col":"rejected","n":9,"y":9,"name":"Todome Road Group"},{".x_var_col":"Todome Town Group",".stack_var_col":"rejected","n":2,"y":2,"name":"Todome Town Group"},{".x_var_col":"Tokurono",".stack_var_col":"rejected","n":14,"y":14,"name":"Tokurono"},{".x_var_col":"Torgbe",".stack_var_col":"rejected","n":14,"y":14,"name":"Torgbe"},{".x_var_col":"torgbe Attahvi ",".stack_var_col":"rejected","n":13,"y":13,"name":"torgbe Attahvi "},{".x_var_col":"Torgbe Attavi",".stack_var_col":"rejected","n":1,"y":1,"name":"Torgbe Attavi"},{".x_var_col":"Tsikata Deworwornye 1",".stack_var_col":"rejected","n":4,"y":4,"name":"Tsikata Deworwornye 1"},{".x_var_col":"Tsikata Deworwornye 2",".stack_var_col":"rejected","n":4,"y":4,"name":"Tsikata Deworwornye 2"},{".x_var_col":"Tsikata Deworwornye 3",".stack_var_col":"rejected","n":1,"y":1,"name":"Tsikata Deworwornye 3"},{".x_var_col":"Vintor",".stack_var_col":"rejected","n":3,"y":3,"name":"Vintor"},{".x_var_col":"Vodo Group",".stack_var_col":"rejected","n":18,"y":18,"name":"Vodo Group"},{".x_var_col":"wuni Ntira",".stack_var_col":"rejected","n":10,"y":10,"name":"wuni Ntira"},{".x_var_col":"Yem Kana ",".stack_var_col":"rejected","n":11,"y":11,"name":"Yem Kana "},{".x_var_col":"Yohanass",".stack_var_col":"rejected","n":10,"y":10,"name":"Yohanass"},{".x_var_col":"Zongo group",".stack_var_col":"rejected","n":22,"y":22,"name":"Zongo group"},{".x_var_col":"Zotor",".stack_var_col":"rejected","n":1,"y":1,"name":"Zotor"}],"type":"column"},{"name":"verified","data":[{".x_var_col":"ABABIO $ CO FARMS AC220",".stack_var_col":"verified","n":23,"y":23,"name":"ABABIO $ CO FARMS AC220"},{".x_var_col":"Abofla Group",".stack_var_col":"verified","n":31,"y":31,"name":"Abofla Group"},{".x_var_col":"Ada Korpe Mawunyo 1 ",".stack_var_col":"verified","n":21,"y":21,"name":"Ada Korpe Mawunyo 1 "},{".x_var_col":"Ada Korpe Mawunyo 2",".stack_var_col":"verified","n":25,"y":25,"name":"Ada Korpe Mawunyo 2"},{".x_var_col":"Adiembra group",".stack_var_col":"verified","n":92,"y":92,"name":"Adiembra group"},{".x_var_col":"Adzoko",".stack_var_col":"verified","n":13,"y":13,"name":"Adzoko"},{".x_var_col":"Adzovi ",".stack_var_col":"verified","n":11,"y":11,"name":"Adzovi "},{".x_var_col":"Afah Iddi group",".stack_var_col":"verified","n":5,"y":5,"name":"Afah Iddi group"},{".x_var_col":"Afah Iddi Group ",".stack_var_col":"verified","n":31,"y":31,"name":"Afah Iddi Group "},{".x_var_col":"Afawuah",".stack_var_col":"verified","n":1,"y":1,"name":"Afawuah"},{".x_var_col":"Afawuah Group ",".stack_var_col":"verified","n":33,"y":33,"name":"Afawuah Group "},{".x_var_col":"Afawuah Group (OLD, DON\"T USE)",".stack_var_col":"verified","n":7,"y":7,"name":"Afawuah Group (OLD, DON\"T USE)"},{".x_var_col":"AFETORGBOR CLAN AC 215",".stack_var_col":"verified","n":19,"y":19,"name":"AFETORGBOR CLAN AC 215"},{".x_var_col":"Agbado ",".stack_var_col":"verified","n":7,"y":7,"name":"Agbado "},{".x_var_col":"Agbavo",".stack_var_col":"verified","n":101,"y":101,"name":"Agbavo"},{".x_var_col":"Agbeko ",".stack_var_col":"verified","n":2,"y":2,"name":"Agbeko "},{".x_var_col":"Ahamans Nkorsuo 1",".stack_var_col":"verified","n":29,"y":29,"name":"Ahamans Nkorsuo 1"},{".x_var_col":"Ahamansu Group",".stack_var_col":"verified","n":20,"y":20,"name":"Ahamansu Group"},{".x_var_col":"Ahamansu Nkorsuo 2",".stack_var_col":"verified","n":30,"y":30,"name":"Ahamansu Nkorsuo 2"},{".x_var_col":"Akorfafa",".stack_var_col":"verified","n":8,"y":8,"name":"Akorfafa"},{".x_var_col":"Akorli",".stack_var_col":"verified","n":10,"y":10,"name":"Akorli"},{".x_var_col":"Akum Group",".stack_var_col":"verified","n":35,"y":35,"name":"Akum Group"},{".x_var_col":"Akwausu Group",".stack_var_col":"verified","n":8,"y":8,"name":"Akwausu Group"},{".x_var_col":"AMANKWA ",".stack_var_col":"verified","n":56,"y":56,"name":"AMANKWA "},{".x_var_col":"Amankwa group",".stack_var_col":"verified","n":30,"y":30,"name":"Amankwa group"},{".x_var_col":"Amenyo ",".stack_var_col":"verified","n":4,"y":4,"name":"Amenyo "},{".x_var_col":"AMETEPE ",".stack_var_col":"verified","n":76,"y":76,"name":"AMETEPE "},{".x_var_col":"Ametepe group",".stack_var_col":"verified","n":27,"y":27,"name":"Ametepe group"},{".x_var_col":"Amos ",".stack_var_col":"verified","n":124,"y":124,"name":"Amos "},{".x_var_col":"Ampeyo  Group",".stack_var_col":"verified","n":90,"y":90,"name":"Ampeyo  Group"},{".x_var_col":"Anani",".stack_var_col":"verified","n":14,"y":14,"name":"Anani"},{".x_var_col":"Anoshie Ti Kpa Group",".stack_var_col":"verified","n":1,"y":1,"name":"Anoshie Ti Kpa Group"},{".x_var_col":"Anyabto",".stack_var_col":"verified","n":2,"y":2,"name":"Anyabto"},{".x_var_col":"Arhin",".stack_var_col":"verified","n":138,"y":138,"name":"Arhin"},{".x_var_col":"Ashanti group 1",".stack_var_col":"verified","n":61,"y":61,"name":"Ashanti group 1"},{".x_var_col":"Ashanti Group 2",".stack_var_col":"verified","n":45,"y":45,"name":"Ashanti Group 2"},{".x_var_col":"Ashanti Group 3",".stack_var_col":"verified","n":46,"y":46,"name":"Ashanti Group 3"},{".x_var_col":"Ashanti Group 4",".stack_var_col":"verified","n":46,"y":46,"name":"Ashanti Group 4"},{".x_var_col":"Ashanti Group 5",".stack_var_col":"verified","n":44,"y":44,"name":"Ashanti Group 5"},{".x_var_col":"Ashanti Group 6",".stack_var_col":"verified","n":42,"y":42,"name":"Ashanti Group 6"},{".x_var_col":"Ashanti Group 7",".stack_var_col":"verified","n":44,"y":44,"name":"Ashanti Group 7"},{".x_var_col":"Ashanti Group 8",".stack_var_col":"verified","n":43,"y":43,"name":"Ashanti Group 8"},{".x_var_col":"Ashanti Group 9",".stack_var_col":"verified","n":46,"y":46,"name":"Ashanti Group 9"},{".x_var_col":"Ashbre First ",".stack_var_col":"verified","n":46,"y":46,"name":"Ashbre First "},{".x_var_col":"Ashbre Town ",".stack_var_col":"verified","n":46,"y":46,"name":"Ashbre Town "},{".x_var_col":"Atta",".stack_var_col":"verified","n":13,"y":13,"name":"Atta"},{".x_var_col":"Atta Kofi",".stack_var_col":"verified","n":50,"y":50,"name":"Atta Kofi"},{".x_var_col":"Avanko",".stack_var_col":"verified","n":10,"y":10,"name":"Avanko"},{".x_var_col":"Awuku group",".stack_var_col":"verified","n":62,"y":62,"name":"Awuku group"},{".x_var_col":"Ayoma farmers coop 1",".stack_var_col":"verified","n":4,"y":4,"name":"Ayoma farmers coop 1"},{".x_var_col":"AYUMBOROTIKPA",".stack_var_col":"verified","n":1,"y":1,"name":"AYUMBOROTIKPA"},{".x_var_col":"Baika Cocoa farmers group 1",".stack_var_col":"verified","n":4,"y":4,"name":"Baika Cocoa farmers group 1"},{".x_var_col":"Baika cocoa farmers group 2",".stack_var_col":"verified","n":4,"y":4,"name":"Baika cocoa farmers group 2"},{".x_var_col":"Bangaham",".stack_var_col":"verified","n":1,"y":1,"name":"Bangaham"},{".x_var_col":"Batimamdo Group 02",".stack_var_col":"verified","n":13,"y":13,"name":"Batimamdo Group 02"},{".x_var_col":"Batimamdo Group 06",".stack_var_col":"verified","n":1,"y":1,"name":"Batimamdo Group 06"},{".x_var_col":"Ben Ninya",".stack_var_col":"verified","n":60,"y":60,"name":"Ben Ninya"},{".x_var_col":"Benedicta 1 Group",".stack_var_col":"verified","n":44,"y":44,"name":"Benedicta 1 Group"},{".x_var_col":"Benedicta Gada",".stack_var_col":"verified","n":192,"y":192,"name":"Benedicta Gada"},{".x_var_col":"Bisakrom Group",".stack_var_col":"verified","n":9,"y":9,"name":"Bisakrom Group"},{".x_var_col":"Bisakrom Group ",".stack_var_col":"verified","n":20,"y":20,"name":"Bisakrom Group "},{".x_var_col":"Bitamamdo Group",".stack_var_col":"verified","n":5,"y":5,"name":"Bitamamdo Group"},{".x_var_col":"BOAKYE VILLAGE 2 AC218",".stack_var_col":"verified","n":25,"y":25,"name":"BOAKYE VILLAGE 2 AC218"},{".x_var_col":"BOAKYE VILLAGE AC 217",".stack_var_col":"verified","n":23,"y":23,"name":"BOAKYE VILLAGE AC 217"},{".x_var_col":"Bob Akura Group",".stack_var_col":"verified","n":13,"y":13,"name":"Bob Akura Group"},{".x_var_col":"Bona Group",".stack_var_col":"verified","n":29,"y":29,"name":"Bona Group"},{".x_var_col":"borey 1",".stack_var_col":"verified","n":4,"y":4,"name":"borey 1"},{".x_var_col":"borey 1   ",".stack_var_col":"verified","n":11,"y":11,"name":"borey 1   "},{".x_var_col":"borey 2",".stack_var_col":"verified","n":3,"y":3,"name":"borey 2"},{".x_var_col":"borey 3",".stack_var_col":"verified","n":1,"y":1,"name":"borey 3"},{".x_var_col":"borey 5",".stack_var_col":"verified","n":5,"y":5,"name":"borey 5"},{".x_var_col":"borey 6",".stack_var_col":"verified","n":2,"y":2,"name":"borey 6"},{".x_var_col":"Borimanga",".stack_var_col":"verified","n":54,"y":54,"name":"Borimanga"},{".x_var_col":"Borlor junction Group",".stack_var_col":"verified","n":21,"y":21,"name":"Borlor junction Group"},{".x_var_col":"bowuri c1",".stack_var_col":"verified","n":1,"y":1,"name":"bowuri c1"},{".x_var_col":"Bralode cocoa farmers coop",".stack_var_col":"verified","n":3,"y":3,"name":"Bralode cocoa farmers coop"},{".x_var_col":"Bukasu Ti Kpa",".stack_var_col":"verified","n":1,"y":1,"name":"Bukasu Ti Kpa"},{".x_var_col":"BUKASU TI KPKA",".stack_var_col":"verified","n":1,"y":1,"name":"BUKASU TI KPKA"},{".x_var_col":"Bumbusu Group",".stack_var_col":"verified","n":24,"y":24,"name":"Bumbusu Group"},{".x_var_col":"Chairman Paul Group",".stack_var_col":"verified","n":12,"y":12,"name":"Chairman Paul Group"},{".x_var_col":"Charles ",".stack_var_col":"verified","n":121,"y":121,"name":"Charles "},{".x_var_col":"Crystal Group",".stack_var_col":"verified","n":1,"y":1,"name":"Crystal Group"},{".x_var_col":"Daapa Junction",".stack_var_col":"verified","n":79,"y":79,"name":"Daapa Junction"},{".x_var_col":"Dagbanja Group ",".stack_var_col":"verified","n":29,"y":29,"name":"Dagbanja Group "},{".x_var_col":"DALIRI",".stack_var_col":"verified","n":2,"y":2,"name":"DALIRI"},{".x_var_col":"DANIEL 1 GROUP ",".stack_var_col":"verified","n":35,"y":35,"name":"DANIEL 1 GROUP "},{".x_var_col":"Daniel group",".stack_var_col":"verified","n":12,"y":12,"name":"Daniel group"},{".x_var_col":"DANIEL GROUP",".stack_var_col":"verified","n":45,"y":45,"name":"DANIEL GROUP"},{".x_var_col":"Dapaa Amanta",".stack_var_col":"verified","n":13,"y":13,"name":"Dapaa Amanta"},{".x_var_col":"Dapaa Amanta (OLD DONT USE)",".stack_var_col":"verified","n":1,"y":1,"name":"Dapaa Amanta (OLD DONT USE)"},{".x_var_col":"Dapaa Fabinso",".stack_var_col":"verified","n":11,"y":11,"name":"Dapaa Fabinso"},{".x_var_col":"Dapaa Group",".stack_var_col":"verified","n":105,"y":105,"name":"Dapaa Group"},{".x_var_col":"Dapaa Group ",".stack_var_col":"verified","n":28,"y":28,"name":"Dapaa Group "},{".x_var_col":"Dapaa Pack",".stack_var_col":"verified","n":3,"y":3,"name":"Dapaa Pack"},{".x_var_col":"Dawuni Group",".stack_var_col":"verified","n":15,"y":15,"name":"Dawuni Group"},{".x_var_col":"Dawuni Group 02",".stack_var_col":"verified","n":1,"y":1,"name":"Dawuni Group 02"},{".x_var_col":"Dodi  PaPasi group",".stack_var_col":"verified","n":94,"y":94,"name":"Dodi  PaPasi group"},{".x_var_col":"Dodi Papase Group",".stack_var_col":"verified","n":2,"y":2,"name":"Dodi Papase Group"},{".x_var_col":"Dodo Akum Group",".stack_var_col":"verified","n":50,"y":50,"name":"Dodo Akum Group"},{".x_var_col":"Dodo Tamale",".stack_var_col":"verified","n":76,"y":76,"name":"Dodo Tamale"},{".x_var_col":"Dodo Tamale Group",".stack_var_col":"verified","n":9,"y":9,"name":"Dodo Tamale Group"},{".x_var_col":"Dohanaayili",".stack_var_col":"verified","n":84,"y":84,"name":"Dohanaayili"},{".x_var_col":"DOMINION POWER AC 216",".stack_var_col":"verified","n":12,"y":12,"name":"DOMINION POWER AC 216"},{".x_var_col":"Dormenu",".stack_var_col":"verified","n":184,"y":184,"name":"Dormenu"},{".x_var_col":"Dzidudu cocoa faermers2",".stack_var_col":"verified","n":4,"y":4,"name":"Dzidudu cocoa faermers2"},{".x_var_col":"Dzidudu cocoa Farmers coop1",".stack_var_col":"verified","n":3,"y":3,"name":"Dzidudu cocoa Farmers coop1"},{".x_var_col":"Dzifa ",".stack_var_col":"verified","n":9,"y":9,"name":"Dzifa "},{".x_var_col":"Dzigbordi ",".stack_var_col":"verified","n":10,"y":10,"name":"Dzigbordi "},{".x_var_col":"Dzordzikodzi Group",".stack_var_col":"verified","n":75,"y":75,"name":"Dzordzikodzi Group"},{".x_var_col":"Efo Mensah",".stack_var_col":"verified","n":57,"y":57,"name":"Efo Mensah"},{".x_var_col":"EFo.Mensah ",".stack_var_col":"verified","n":78,"y":78,"name":"EFo.Mensah "},{".x_var_col":"ELIKPLIM GROUP",".stack_var_col":"verified","n":47,"y":47,"name":"ELIKPLIM GROUP"},{".x_var_col":"Elikplim group ",".stack_var_col":"verified","n":60,"y":60,"name":"Elikplim group "},{".x_var_col":"Emma group",".stack_var_col":"verified","n":16,"y":16,"name":"Emma group"},{".x_var_col":"Emmanuel 1 group",".stack_var_col":"verified","n":62,"y":62,"name":"Emmanuel 1 group"},{".x_var_col":"Esreso group",".stack_var_col":"verified","n":72,"y":72,"name":"Esreso group"},{".x_var_col":"Fafali ",".stack_var_col":"verified","n":13,"y":13,"name":"Fafali "},{".x_var_col":"Francis",".stack_var_col":"verified","n":10,"y":10,"name":"Francis"},{".x_var_col":"Francis ",".stack_var_col":"verified","n":124,"y":124,"name":"Francis "},{".x_var_col":"Fudu",".stack_var_col":"verified","n":139,"y":139,"name":"Fudu"},{".x_var_col":"Gada Bright",".stack_var_col":"verified","n":171,"y":171,"name":"Gada Bright"},{".x_var_col":"Ganyo",".stack_var_col":"verified","n":10,"y":10,"name":"Ganyo"},{".x_var_col":"Godfred Group",".stack_var_col":"verified","n":6,"y":6,"name":"Godfred Group"},{".x_var_col":"Godfred Group ",".stack_var_col":"verified","n":19,"y":19,"name":"Godfred Group "},{".x_var_col":"Gogo group",".stack_var_col":"verified","n":22,"y":22,"name":"Gogo group"},{".x_var_col":"Goku",".stack_var_col":"verified","n":7,"y":7,"name":"Goku"},{".x_var_col":"Gyebi Group",".stack_var_col":"verified","n":36,"y":36,"name":"Gyebi Group"},{".x_var_col":"Gyimawe Mr",".stack_var_col":"verified","n":55,"y":55,"name":"Gyimawe Mr"},{".x_var_col":"Iddris Group",".stack_var_col":"verified","n":6,"y":6,"name":"Iddris Group"},{".x_var_col":"Ikeye cocoa farmers coop",".stack_var_col":"verified","n":3,"y":3,"name":"Ikeye cocoa farmers coop"},{".x_var_col":"Isaac group",".stack_var_col":"verified","n":16,"y":16,"name":"Isaac group"},{".x_var_col":"Isaac Group",".stack_var_col":"verified","n":22,"y":22,"name":"Isaac Group"},{".x_var_col":"Isaac group ",".stack_var_col":"verified","n":2,"y":2,"name":"Isaac group "},{".x_var_col":"Isaac Group 02",".stack_var_col":"verified","n":1,"y":1,"name":"Isaac Group 02"},{".x_var_col":"Isaac Totokadi",".stack_var_col":"verified","n":192,"y":192,"name":"Isaac Totokadi"},{".x_var_col":"JILIMA",".stack_var_col":"verified","n":2,"y":2,"name":"JILIMA"},{".x_var_col":"Joel",".stack_var_col":"verified","n":9,"y":9,"name":"Joel"},{".x_var_col":"John ",".stack_var_col":"verified","n":54,"y":54,"name":"John "},{".x_var_col":"John farm",".stack_var_col":"verified","n":10,"y":10,"name":"John farm"},{".x_var_col":"JOSEPH GROUP",".stack_var_col":"verified","n":74,"y":74,"name":"JOSEPH GROUP"},{".x_var_col":"Justice Group",".stack_var_col":"verified","n":15,"y":15,"name":"Justice Group"},{".x_var_col":"Justice Group 02",".stack_var_col":"verified","n":1,"y":1,"name":"Justice Group 02"},{".x_var_col":"Kaniago 1, Amansie West District Coop ",".stack_var_col":"verified","n":16,"y":16,"name":"Kaniago 1, Amansie West District Coop "},{".x_var_col":"Kaniago 2, Amansie West District Coop ",".stack_var_col":"verified","n":17,"y":17,"name":"Kaniago 2, Amansie West District Coop "},{".x_var_col":"KATARI",".stack_var_col":"verified","n":1,"y":1,"name":"KATARI"},{".x_var_col":"Ken ",".stack_var_col":"verified","n":121,"y":121,"name":"Ken "},{".x_var_col":"Kenet",".stack_var_col":"verified","n":13,"y":13,"name":"Kenet"},{".x_var_col":"Kenet ",".stack_var_col":"verified","n":129,"y":129,"name":"Kenet "},{".x_var_col":"kimobaan",".stack_var_col":"verified","n":2,"y":2,"name":"kimobaan"},{".x_var_col":"Kimobaan",".stack_var_col":"verified","n":2,"y":2,"name":"Kimobaan"},{".x_var_col":"Kimobaan2",".stack_var_col":"verified","n":3,"y":3,"name":"Kimobaan2"},{".x_var_col":"Kimonbaan ",".stack_var_col":"verified","n":6,"y":6,"name":"Kimonbaan "},{".x_var_col":"Kimonbaan2 ",".stack_var_col":"verified","n":5,"y":5,"name":"Kimonbaan2 "},{".x_var_col":"Kinyobaa",".stack_var_col":"verified","n":1,"y":1,"name":"Kinyobaa"},{".x_var_col":"Kinyobaan 2",".stack_var_col":"verified","n":3,"y":3,"name":"Kinyobaan 2"},{".x_var_col":"Kinyobaan Montondo",".stack_var_col":"verified","n":3,"y":3,"name":"Kinyobaan Montondo"},{".x_var_col":"kokoti Group",".stack_var_col":"verified","n":61,"y":61,"name":"kokoti Group"},{".x_var_col":"Koni Mata Baka Group",".stack_var_col":"verified","n":1,"y":1,"name":"Koni Mata Baka Group"},{".x_var_col":"Konsuaso Group",".stack_var_col":"verified","n":85,"y":85,"name":"Konsuaso Group"},{".x_var_col":"Koowa",".stack_var_col":"verified","n":135,"y":135,"name":"Koowa"},{".x_var_col":"koru Group",".stack_var_col":"verified","n":62,"y":62,"name":"koru Group"},{".x_var_col":"Kosomba group 1 ",".stack_var_col":"verified","n":18,"y":18,"name":"Kosomba group 1 "},{".x_var_col":"Kosomba group 2",".stack_var_col":"verified","n":19,"y":19,"name":"Kosomba group 2"},{".x_var_col":"Kosomba group 3",".stack_var_col":"verified","n":9,"y":9,"name":"Kosomba group 3"},{".x_var_col":"Kosomba group 4",".stack_var_col":"verified","n":8,"y":8,"name":"Kosomba group 4"},{".x_var_col":"Krongtan one",".stack_var_col":"verified","n":37,"y":37,"name":"Krongtan one"},{".x_var_col":"Krongtan town ",".stack_var_col":"verified","n":34,"y":34,"name":"Krongtan town "},{".x_var_col":"kukoo",".stack_var_col":"verified","n":6,"y":6,"name":"kukoo"},{".x_var_col":"kukou",".stack_var_col":"verified","n":66,"y":66,"name":"kukou"},{".x_var_col":"kukurantumi cocoa farmers coop 1",".stack_var_col":"verified","n":3,"y":3,"name":"kukurantumi cocoa farmers coop 1"},{".x_var_col":"kukurantumi cocoa farmers coop 2",".stack_var_col":"verified","n":5,"y":5,"name":"kukurantumi cocoa farmers coop 2"},{".x_var_col":"kukurantumi Group",".stack_var_col":"verified","n":58,"y":58,"name":"kukurantumi Group"},{".x_var_col":"Kukurantumi Group",".stack_var_col":"verified","n":16,"y":16,"name":"Kukurantumi Group"},{".x_var_col":"Kunda Group",".stack_var_col":"verified","n":61,"y":61,"name":"Kunda Group"},{".x_var_col":"Kwame group",".stack_var_col":"verified","n":12,"y":12,"name":"Kwame group"},{".x_var_col":"Kweku",".stack_var_col":"verified","n":12,"y":12,"name":"Kweku"},{".x_var_col":"Kweku ",".stack_var_col":"verified","n":118,"y":118,"name":"Kweku "},{".x_var_col":"Liati Wote Afadzato Norvisi Co-operative 1",".stack_var_col":"verified","n":15,"y":15,"name":"Liati Wote Afadzato Norvisi Co-operative 1"},{".x_var_col":"Liati Wote Afadzato Norvisi Co-operative 2",".stack_var_col":"verified","n":15,"y":15,"name":"Liati Wote Afadzato Norvisi Co-operative 2"},{".x_var_col":"Liati Wote Afadzato Norvisi Co-operative 3",".stack_var_col":"verified","n":18,"y":18,"name":"Liati Wote Afadzato Norvisi Co-operative 3"},{".x_var_col":"Manaf",".stack_var_col":"verified","n":116,"y":116,"name":"Manaf"},{".x_var_col":"Mangoase group",".stack_var_col":"verified","n":111,"y":111,"name":"Mangoase group"},{".x_var_col":"Mangsongsim",".stack_var_col":"verified","n":57,"y":57,"name":"Mangsongsim"},{".x_var_col":"Martha Dzreke",".stack_var_col":"verified","n":183,"y":183,"name":"Martha Dzreke"},{".x_var_col":"Mawuena",".stack_var_col":"verified","n":125,"y":125,"name":"Mawuena"},{".x_var_col":"Mawunyo",".stack_var_col":"verified","n":186,"y":186,"name":"Mawunyo"},{".x_var_col":"Mensah Bismark Kwaku",".stack_var_col":"verified","n":112,"y":112,"name":"Mensah Bismark Kwaku"},{".x_var_col":"Milenorvisi",".stack_var_col":"verified","n":13,"y":13,"name":"Milenorvisi"},{".x_var_col":"Mohammed Group",".stack_var_col":"verified","n":5,"y":5,"name":"Mohammed Group"},{".x_var_col":"Mohammed Group ",".stack_var_col":"verified","n":3,"y":3,"name":"Mohammed Group "},{".x_var_col":"Mohammed Issah Group",".stack_var_col":"verified","n":9,"y":9,"name":"Mohammed Issah Group"},{".x_var_col":"mohemad group",".stack_var_col":"verified","n":12,"y":12,"name":"mohemad group"},{".x_var_col":"Mornyuie ",".stack_var_col":"verified","n":11,"y":11,"name":"Mornyuie "},{".x_var_col":"Mose group",".stack_var_col":"verified","n":6,"y":6,"name":"Mose group"},{".x_var_col":"Moses group",".stack_var_col":"verified","n":11,"y":11,"name":"Moses group"},{".x_var_col":"Mpreniase 1 Amansie West District Coop ",".stack_var_col":"verified","n":19,"y":19,"name":"Mpreniase 1 Amansie West District Coop "},{".x_var_col":"Mpreniase 2 Amansea Wast District Coop ",".stack_var_col":"verified","n":15,"y":15,"name":"Mpreniase 2 Amansea Wast District Coop "},{".x_var_col":"Mr Dza Group",".stack_var_col":"verified","n":120,"y":120,"name":"Mr Dza Group"},{".x_var_col":"Mr Getumah Seth",".stack_var_col":"verified","n":59,"y":59,"name":"Mr Getumah Seth"},{".x_var_col":"Mr GYIMAWE",".stack_var_col":"verified","n":11,"y":11,"name":"Mr GYIMAWE"},{".x_var_col":"Mr john",".stack_var_col":"verified","n":59,"y":59,"name":"Mr john"},{".x_var_col":"Mr Wosenya",".stack_var_col":"verified","n":59,"y":59,"name":"Mr Wosenya"},{".x_var_col":"Mr. Gertumah Seth ",".stack_var_col":"verified","n":83,"y":83,"name":"Mr. Gertumah Seth "},{".x_var_col":"Mr. Gyimawe group",".stack_var_col":"verified","n":27,"y":27,"name":"Mr. Gyimawe group"},{".x_var_col":"Mr.wosenya ",".stack_var_col":"verified","n":82,"y":82,"name":"Mr.wosenya "},{".x_var_col":"N'nabiya",".stack_var_col":"verified","n":2,"y":2,"name":"N'nabiya"},{".x_var_col":"Nahene 1 Amansie West District Coop ",".stack_var_col":"verified","n":6,"y":6,"name":"Nahene 1 Amansie West District Coop "},{".x_var_col":"Nahene 2,Amansie West District Crop ",".stack_var_col":"verified","n":18,"y":18,"name":"Nahene 2,Amansie West District Crop "},{".x_var_col":"Nahene 3, Amansie West District ",".stack_var_col":"verified","n":16,"y":16,"name":"Nahene 3, Amansie West District "},{".x_var_col":"Nakoja group",".stack_var_col":"verified","n":14,"y":14,"name":"Nakoja group"},{".x_var_col":"NANGBANYINI",".stack_var_col":"verified","n":1,"y":1,"name":"NANGBANYINI"},{".x_var_col":"Neesim Vela",".stack_var_col":"verified","n":66,"y":66,"name":"Neesim Vela"},{".x_var_col":"New Town group",".stack_var_col":"verified","n":19,"y":19,"name":"New Town group"},{".x_var_col":"Nignan Group",".stack_var_col":"verified","n":5,"y":5,"name":"Nignan Group"},{".x_var_col":"Nignatiche",".stack_var_col":"verified","n":2,"y":2,"name":"Nignatiche"},{".x_var_col":"Norvisi Cocoa farmers coop 1",".stack_var_col":"verified","n":3,"y":3,"name":"Norvisi Cocoa farmers coop 1"},{".x_var_col":"Norvisi Cocoa farmers coop 3",".stack_var_col":"verified","n":7,"y":7,"name":"Norvisi Cocoa farmers coop 3"},{".x_var_col":"Norvisi Cocoa farmers coop 4",".stack_var_col":"verified","n":4,"y":4,"name":"Norvisi Cocoa farmers coop 4"},{".x_var_col":"Norvisi Cocoa farmers coop 5",".stack_var_col":"verified","n":1,"y":1,"name":"Norvisi Cocoa farmers coop 5"},{".x_var_col":"Npopiin",".stack_var_col":"verified","n":5,"y":5,"name":"Npopiin"},{".x_var_col":"Npoppii ",".stack_var_col":"verified","n":4,"y":4,"name":"Npoppii "},{".x_var_col":"Nsambaan Group",".stack_var_col":"verified","n":6,"y":6,"name":"Nsambaan Group"},{".x_var_col":"Nsambaan Group ",".stack_var_col":"verified","n":18,"y":18,"name":"Nsambaan Group "},{".x_var_col":"Ntakbe Agbaa Group",".stack_var_col":"verified","n":3,"y":3,"name":"Ntakbe Agbaa Group"},{".x_var_col":"Ntakbe Agbaa Group ",".stack_var_col":"verified","n":2,"y":2,"name":"Ntakbe Agbaa Group "},{".x_var_col":"NUNANA ",".stack_var_col":"verified","n":59,"y":59,"name":"NUNANA "},{".x_var_col":"Nunana group",".stack_var_col":"verified","n":35,"y":35,"name":"Nunana group"},{".x_var_col":"Nunana Group",".stack_var_col":"verified","n":8,"y":8,"name":"Nunana Group"},{".x_var_col":"Nyalbaan Group",".stack_var_col":"verified","n":12,"y":12,"name":"Nyalbaan Group"},{".x_var_col":"Nyalbaan Group ",".stack_var_col":"verified","n":67,"y":67,"name":"Nyalbaan Group "},{".x_var_col":"Nyame",".stack_var_col":"verified","n":141,"y":141,"name":"Nyame"},{".x_var_col":"Nyamekye Group",".stack_var_col":"verified","n":5,"y":5,"name":"Nyamekye Group"},{".x_var_col":"Nyamekye Group ",".stack_var_col":"verified","n":35,"y":35,"name":"Nyamekye Group "},{".x_var_col":"Odumasi ",".stack_var_col":"verified","n":46,"y":46,"name":"Odumasi "},{".x_var_col":"Odumasi Town",".stack_var_col":"verified","n":44,"y":44,"name":"Odumasi Town"},{".x_var_col":"Pampawie Group",".stack_var_col":"verified","n":8,"y":8,"name":"Pampawie Group"},{".x_var_col":"Pampawie Group ",".stack_var_col":"verified","n":26,"y":26,"name":"Pampawie Group "},{".x_var_col":"PAMPAWIE Star ",".stack_var_col":"verified","n":25,"y":25,"name":"PAMPAWIE Star "},{".x_var_col":"Pampawie Star Group",".stack_var_col":"verified","n":17,"y":17,"name":"Pampawie Star Group"},{".x_var_col":"Paul Group",".stack_var_col":"verified","n":5,"y":5,"name":"Paul Group"},{".x_var_col":"Paul group ",".stack_var_col":"verified","n":18,"y":18,"name":"Paul group "},{".x_var_col":"Philip Group",".stack_var_col":"verified","n":62,"y":62,"name":"Philip Group"},{".x_var_col":"PRECIOUS LAMB FARM AC 219",".stack_var_col":"verified","n":20,"y":20,"name":"PRECIOUS LAMB FARM AC 219"},{".x_var_col":"s k ofori group",".stack_var_col":"verified","n":86,"y":86,"name":"s k ofori group"},{".x_var_col":"S.K OFORI ",".stack_var_col":"verified","n":17,"y":17,"name":"S.K OFORI "},{".x_var_col":"Sabah Group",".stack_var_col":"verified","n":29,"y":29,"name":"Sabah Group"},{".x_var_col":"Sakyi Group",".stack_var_col":"verified","n":26,"y":26,"name":"Sakyi Group"},{".x_var_col":"Salifu Ekyan 1",".stack_var_col":"verified","n":41,"y":41,"name":"Salifu Ekyan 1"},{".x_var_col":"Salifu Ekyan 2",".stack_var_col":"verified","n":41,"y":41,"name":"Salifu Ekyan 2"},{".x_var_col":"Salifu Group",".stack_var_col":"verified","n":71,"y":71,"name":"Salifu Group"},{".x_var_col":"Samuel",".stack_var_col":"verified","n":2,"y":2,"name":"Samuel"},{".x_var_col":"Samuel Group",".stack_var_col":"verified","n":29,"y":29,"name":"Samuel Group"},{".x_var_col":"Samuel Group ",".stack_var_col":"verified","n":30,"y":30,"name":"Samuel Group "},{".x_var_col":"Sanko Group",".stack_var_col":"verified","n":111,"y":111,"name":"Sanko Group"},{".x_var_col":"Saware Yofie Group",".stack_var_col":"verified","n":3,"y":3,"name":"Saware Yofie Group"},{".x_var_col":"SAWARE YOFIE GROUP",".stack_var_col":"verified","n":1,"y":1,"name":"SAWARE YOFIE GROUP"},{".x_var_col":"SAWERE GROUP",".stack_var_col":"verified","n":1,"y":1,"name":"SAWERE GROUP"},{".x_var_col":"Seibu Adam Group",".stack_var_col":"verified","n":25,"y":25,"name":"Seibu Adam Group"},{".x_var_col":"selorm",".stack_var_col":"verified","n":143,"y":143,"name":"selorm"},{".x_var_col":"Shi Ti Yie Group",".stack_var_col":"verified","n":3,"y":3,"name":"Shi Ti Yie Group"},{".x_var_col":"SHI TI YIE GROUP",".stack_var_col":"verified","n":1,"y":1,"name":"SHI TI YIE GROUP"},{".x_var_col":"Shikurduu",".stack_var_col":"verified","n":50,"y":50,"name":"Shikurduu"},{".x_var_col":"Silimboma",".stack_var_col":"verified","n":49,"y":49,"name":"Silimboma"},{".x_var_col":"SK Ofori",".stack_var_col":"verified","n":13,"y":13,"name":"SK Ofori"},{".x_var_col":"Star Group",".stack_var_col":"verified","n":91,"y":91,"name":"Star Group"},{".x_var_col":"SUGLO",".stack_var_col":"verified","n":1,"y":1,"name":"SUGLO"},{".x_var_col":"Suhulobolibuni",".stack_var_col":"verified","n":1,"y":1,"name":"Suhulobolibuni"},{".x_var_col":"Suhulobolibuni kpugli",".stack_var_col":"verified","n":1,"y":1,"name":"Suhulobolibuni kpugli"},{".x_var_col":"SUHUYINI",".stack_var_col":"verified","n":2,"y":2,"name":"SUHUYINI"},{".x_var_col":"Sule",".stack_var_col":"verified","n":128,"y":128,"name":"Sule"},{".x_var_col":"sulognan",".stack_var_col":"verified","n":1,"y":1,"name":"sulognan"},{".x_var_col":"Tanalaafie. Group",".stack_var_col":"verified","n":1,"y":1,"name":"Tanalaafie. Group"},{".x_var_col":"Teacher",".stack_var_col":"verified","n":113,"y":113,"name":"Teacher"},{".x_var_col":"Thomas Tsawodzi Yao",".stack_var_col":"verified","n":98,"y":98,"name":"Thomas Tsawodzi Yao"},{".x_var_col":"Tiiterito ",".stack_var_col":"verified","n":1,"y":1,"name":"Tiiterito "},{".x_var_col":"Tiiterito Nakpachee Community ",".stack_var_col":"verified","n":6,"y":6,"name":"Tiiterito Nakpachee Community "},{".x_var_col":"Tikpaan",".stack_var_col":"verified","n":3,"y":3,"name":"Tikpaan"},{".x_var_col":"Tikpaan Binagando ",".stack_var_col":"verified","n":5,"y":5,"name":"Tikpaan Binagando "},{".x_var_col":"Tikpaan Gmafudo",".stack_var_col":"verified","n":13,"y":13,"name":"Tikpaan Gmafudo"},{".x_var_col":"Tikpaan Group",".stack_var_col":"verified","n":12,"y":12,"name":"Tikpaan Group"},{".x_var_col":"Tikpaan Group ",".stack_var_col":"verified","n":68,"y":68,"name":"Tikpaan Group "},{".x_var_col":"Tilijotob",".stack_var_col":"verified","n":3,"y":3,"name":"Tilijotob"},{".x_var_col":"Tilijotob ",".stack_var_col":"verified","n":4,"y":4,"name":"Tilijotob "},{".x_var_col":"Timothy group",".stack_var_col":"verified","n":16,"y":16,"name":"Timothy group"},{".x_var_col":"Tipoantiba Kulkpeni",".stack_var_col":"verified","n":1,"y":1,"name":"Tipoantiba Kulkpeni"},{".x_var_col":"Titirtob",".stack_var_col":"verified","n":5,"y":5,"name":"Titirtob"},{".x_var_col":"Titretob Gmafudo",".stack_var_col":"verified","n":4,"y":4,"name":"Titretob Gmafudo"},{".x_var_col":"Titretop Group ",".stack_var_col":"verified","n":56,"y":56,"name":"Titretop Group "},{".x_var_col":"Titritob ",".stack_var_col":"verified","n":4,"y":4,"name":"Titritob "},{".x_var_col":"Todome Road Group",".stack_var_col":"verified","n":7,"y":7,"name":"Todome Road Group"},{".x_var_col":"Todome Town Group",".stack_var_col":"verified","n":2,"y":2,"name":"Todome Town Group"},{".x_var_col":"Tokuranu Group",".stack_var_col":"verified","n":6,"y":6,"name":"Tokuranu Group"},{".x_var_col":"Tokurono",".stack_var_col":"verified","n":115,"y":115,"name":"Tokurono"},{".x_var_col":"Torgbe",".stack_var_col":"verified","n":142,"y":142,"name":"Torgbe"},{".x_var_col":"torgbe Attahvi ",".stack_var_col":"verified","n":56,"y":56,"name":"torgbe Attahvi "},{".x_var_col":"Torgbe Attavi",".stack_var_col":"verified","n":86,"y":86,"name":"Torgbe Attavi"},{".x_var_col":"Tritretob Kulkarni",".stack_var_col":"verified","n":3,"y":3,"name":"Tritretob Kulkarni"},{".x_var_col":"Tsikata Deworwornye 1",".stack_var_col":"verified","n":14,"y":14,"name":"Tsikata Deworwornye 1"},{".x_var_col":"Tsikata Deworwornye 2",".stack_var_col":"verified","n":15,"y":15,"name":"Tsikata Deworwornye 2"},{".x_var_col":"Tsikata Deworwornye 3",".stack_var_col":"verified","n":18,"y":18,"name":"Tsikata Deworwornye 3"},{".x_var_col":"TuDu Group",".stack_var_col":"verified","n":1,"y":1,"name":"TuDu Group"},{".x_var_col":"TUNGTEEYA",".stack_var_col":"verified","n":1,"y":1,"name":"TUNGTEEYA"},{".x_var_col":"VICTOR GROUP",".stack_var_col":"verified","n":79,"y":79,"name":"VICTOR GROUP"},{".x_var_col":"Vintor",".stack_var_col":"verified","n":12,"y":12,"name":"Vintor"},{".x_var_col":"Vodo Group",".stack_var_col":"verified","n":61,"y":61,"name":"Vodo Group"},{".x_var_col":"WARAWARA PLAZA AC214",".stack_var_col":"verified","n":17,"y":17,"name":"WARAWARA PLAZA AC214"},{".x_var_col":"Wassah Group",".stack_var_col":"verified","n":7,"y":7,"name":"Wassah Group"},{".x_var_col":"Worlanyo Group",".stack_var_col":"verified","n":8,"y":8,"name":"Worlanyo Group"},{".x_var_col":"Worlanyo Group ",".stack_var_col":"verified","n":7,"y":7,"name":"Worlanyo Group "},{".x_var_col":"wuni Ntira",".stack_var_col":"verified","n":76,"y":76,"name":"wuni Ntira"},{".x_var_col":"WUNZOOYA",".stack_var_col":"verified","n":1,"y":1,"name":"WUNZOOYA"},{".x_var_col":"Yapala Group",".stack_var_col":"verified","n":18,"y":18,"name":"Yapala Group"},{".x_var_col":"Yebita Fanga Group",".stack_var_col":"verified","n":2,"y":2,"name":"Yebita Fanga Group"},{".x_var_col":"Yem Kana ",".stack_var_col":"verified","n":66,"y":66,"name":"Yem Kana "},{".x_var_col":"Yenjerido Group",".stack_var_col":"verified","n":18,"y":18,"name":"Yenjerido Group"},{".x_var_col":"Yenjerido Group 02",".stack_var_col":"verified","n":1,"y":1,"name":"Yenjerido Group 02"},{".x_var_col":"YESONU GROUP",".stack_var_col":"verified","n":1,"y":1,"name":"YESONU GROUP"},{".x_var_col":"Yohanass",".stack_var_col":"verified","n":139,"y":139,"name":"Yohanass"},{".x_var_col":"YUMZAA",".stack_var_col":"verified","n":1,"y":1,"name":"YUMZAA"},{".x_var_col":"Zisung",".stack_var_col":"verified","n":1,"y":1,"name":"Zisung"},{".x_var_col":"Zongo group",".stack_var_col":"verified","n":97,"y":97,"name":"Zongo group"},{".x_var_col":"Zotor",".stack_var_col":"verified","n":6,"y":6,"name":"Zotor"}],"type":"column"}],"xAxis":{"type":"category","title":{"text":""},"categories":["ABABIO $ CO FARMS AC220","Abofla Group","Ada Korpe Mawunyo 1 ","Ada Korpe Mawunyo 2","Adiembra group","Adzoko","Adzovi ","Afah Iddi group","Afah Iddi Group ","Afawuah","Afawuah Group ","Afawuah Group (OLD, DON\"T USE)","AFETORGBOR CLAN AC 215","Agbado ","Agbavo","Agbeko ","Ahamans Nkorsuo 1","Ahamansu Group","Ahamansu Nkorsuo 2","Akorfafa","Akorli","Akum Group","Akwausu Group","AMANKWA ","Amankwa group","Amenyo ","AMETEPE ","Ametepe group","Amos ","Ampeyo  Group","Anani","Anoshie Ti Kpa Group","Anyabto","Arhin","Ashanti group 1","Ashanti Group 2","Ashanti Group 3","Ashanti Group 4","Ashanti Group 5","Ashanti Group 6","Ashanti Group 7","Ashanti Group 8","Ashanti Group 9","Ashbre First ","Ashbre Town ","Atta","Atta Kofi","Avanko","Awuku group","Ayoma farmers coop 1","AYUMBOROTIKPA","Baika Cocoa farmers group 1","Baika cocoa farmers group 2","Bangaham","Batimamdo Group 02","Batimamdo Group 06","Beatrice Group","Ben Ninya","Benedicta 1 Group","Benedicta Gada","Bisakrom Group","Bisakrom Group ","Bitamamdo Group","BOAKYE VILLAGE 2 AC218","BOAKYE VILLAGE AC 217","Bob Akura Group","Bona Group","borey 1","borey 1   ","borey 2","borey 3","borey 5","borey 6","borimanga","Borimanga","Borlor junction Group","bowuri c1","Bralode cocoa farmers coop","Bukasu Ti Kpa","BUKASU TI KPKA","Bumbusu Group","Chairman Paul Group","Charles ","Chris ","Crystal Group","Daapa Junction","Dagbanja Group ","DALIRI","DANIEL 1 GROUP ","Daniel group","DANIEL GROUP","Dapaa Amanta","Dapaa Amanta (OLD DONT USE)","Dapaa Fabinso","Dapaa Group","Dapaa Group ","Dapaa Pack","Dawuni Group","Dawuni Group 02","Dodi  PaPasi group","Dodi Papase Group","Dodo Akum Group","Dodo Tamale","Dodo Tamale Group","Dohanaayili","DOMINION POWER AC 216","Dormenu","Dzidudu cocoa faermers2","Dzidudu cocoa Farmers coop1","Dzifa ","Dzigbordi ","Dzordzikodzi Group","Efo Mensah","EFo.Mensah ","ELIKPLIM GROUP","Elikplim group ","Emma group","Emmanuel 1 group","Esreso group","Fafali ","Francis","Francis ","Fudu","Gada Bright","Ganyo","Godfred Group","Godfred Group ","Gogo group","Goku","Gyebi Group","Gyimawe Mr","Iddris Group","Ikeye cocoa farmers coop","Isaac group","Isaac Group","Isaac group ","Isaac Group 02","Isaac Totokadi","jasikan","Jasikan","jasikan ","Jasikan ","JASIKAN ","JILIMA","Joel","John ","John farm","JOSEPH GROUP","Justice Group","Justice Group 02","Kaniago 1, Amansie West District Coop ","Kaniago 2, Amansie West District Coop ","KATARI","Ken ","Kenet","Kenet ","kimobaan","Kimobaan","Kimobaan2","Kimonbaan ","Kimonbaan2 ","Kinyobaa","Kinyobaan 2","Kinyobaan Montondo","kokoti Group","Koni Mata Baka Group","Konsuaso Group","Koowa","koru Group","Kosomba group 1 ","Kosomba group 2","Kosomba group 3","Kosomba group 4","Krongtan one","Krongtan town ","kukoo","kukou","kukurantumi cocoa farmers coop 1","kukurantumi cocoa farmers coop 2","kukurantumi Group","Kukurantumi Group","Kunda Group","Kwame group","Kweku","Kweku ","Liati Wote Afadzato Norvisi Co-operative 1","Liati Wote Afadzato Norvisi Co-operative 2","Liati Wote Afadzato Norvisi Co-operative 3","Manaf","Mangoase group","Mangsongsim","Martha Dzreke","Mawuena","Mawunyo","Mensah Bismark Kwaku","Milenorvisi","Mohammed Group","Mohammed Group ","Mohammed Issah Group","mohemad group","Mornyuie ","Mose group","Moses group","Mpreniase 1 Amansie West District Coop ","Mpreniase 2 Amansea Wast District Coop ","Mr Dza Group","Mr Getumah Seth","Mr GYIMAWE","Mr john","Mr Wosenya","Mr. Gertumah Seth ","Mr. Gyimawe group","Mr.wosenya ","N'nabiya","Nahene 1 Amansie West District Coop ","Nahene 2,Amansie West District Crop ","Nahene 3, Amansie West District ","Nakoja group","NANGBANYINI","Neesim Vela","New Town group","Nignan Group","Nignatiche","Norvisi Cocoa farmers coop 1","Norvisi Cocoa farmers coop 3","Norvisi Cocoa farmers coop 4","Norvisi Cocoa farmers coop 5","Npopiin","Npoppii ","Nsambaan Group","Nsambaan Group ","Ntakbe Agbaa Group","Ntakbe Agbaa Group ","NUNANA ","Nunana group","Nunana Group","Nyalbaan Group","Nyalbaan Group ","Nyame","Nyamekye Group","Nyamekye Group ","Odumasi ","Odumasi Town","Pampawie Group","Pampawie Group ","PAMPAWIE Star ","Pampawie Star Group","Pat","Paul Group","Paul group ","Philip Group","PRECIOUS LAMB FARM AC 219","s k ofori group","S.K OFORI ","Sabah Group","Sakyi Group","Salifu Ekyan 1","Salifu Ekyan 2","Salifu Group","Samuel","Samuel Group","Samuel Group ","Sanko Group","Saware Yofie Group","SAWARE YOFIE GROUP","SAWERE GROUP","Seibu Adam Group","selorm","Shi Ti Yie Group","SHI TI YIE GROUP","Shikurduu","Silimboma","SK Ofori","Star Group","SUGLO","Suhulobolibuni","Suhulobolibuni kpugli","SUHUYINI","Sule","sulognan","Tanalaafie. Group","Teacher","Thomas Tsawodzi Yao","Tiiterito ","Tiiterito Nakpachee Community ","Tikpaan","Tikpaan Binagando ","Tikpaan Gmafudo","Tikpaan Group","Tikpaan Group ","Tilijotob","Tilijotob ","Timothy group","Tipoantiba Kulkpeni","Titirtob","Titretob Gmafudo","Titretop Group ","Titritob ","Todome Road Group","Todome Town Group","Tokuranu Group","Tokurono","Torgbe","torgbe Attahvi ","Torgbe Attavi","Tritretob Kulkarni","Tsikata Deworwornye 1","Tsikata Deworwornye 2","Tsikata Deworwornye 3","TuDu Group","TUNGTEEYA","VICTOR GROUP","Vintor","Vodo Group","WARAWARA PLAZA AC214","Wassah Group","Worlanyo Group","Worlanyo Group ","wuni Ntira","WUNZOOYA","Yapala Group","Yebita Fanga Group","Yem Kana ","Yenjerido Group","Yenjerido Group 02","YESONU GROUP","Yohanass","YUMZAA","Zisung","Zongo group","Zotor"]},"legend":{"title":{"text":"Survey status"}},"tooltip":{"formatter":"function() {\n          var value = this.y;\n          var totalValue = ((this.point && this.point.stackTotal != null) ? this.point.stackTotal : ((this.total != null) ? this.total : this.y));\n          var categoryLabel = this.point.category || this.series.chart.xAxis[0].categories[this.point.x] || this.x;\n          return '<b>' + categoryLabel + '<\/b><br/>' +\n                 this.series.name + ': ' + value + '<br/>' +\n                 'Total: ' + totalValue;\n        }"}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.plotOptions.column.dataLabels.formatter","hc_opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"function(el, x) {  if (window.dashboardrRegisterChart) {    window.dashboardrRegisterChart({      id: 'dr_chart_633054b39e',      backend: 'highcharter',      el: el,      x: x,      filterVars: null    });  }}","data":null}]}}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><a href="https://favstats.github.io/dashboardr/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.5rem; background: rgba(0, 0, 0, 0.05); border-radius: 4px; font-size: 1rem; color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s ease, background 0.2s ease;" onmouseover="this.style.opacity='1'; this.style.background='rgba(0, 0, 0, 0.08)';" onmouseout="this.style.opacity='0.8'; this.style.background='rgba(0, 0, 0, 0.05)';"><img src="https://raw.githubusercontent.com/favstats/dashboardr/refs/heads/main/man/figures/logo.svg" alt="dashboardr logo" style="width: 24px; height: 24px; object-fit: contain;"><span style="font-weight: 500;">Powered by dashboardr</span></a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
