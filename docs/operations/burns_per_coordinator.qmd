@@ -1,0 +1,195 @@
+---
+title: "Burns per coordinator"
+format: html
+---
+
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+dashboardr::.page_config(accessibility = TRUE, inputs = TRUE, crosstab_prefix = "burns_per_coordinator")
+```
+
+```{r setup}
+#| echo: false
+#| warning: false
+#| message: false
+#| error: false
+#| results: 'hide'
+
+# Load dashboardr (includes dplyr, highcharter as dependencies)
+library(dashboardr)
+
+# Global chunk options
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
+  fig.width = 12,
+  fig.height = 8,
+  dpi = 300
+)
+
+# Load data
+data <- readRDS('dataset_small_76obs.rds')
+
+# Data summary
+cat('Dataset loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
+
+# Create filtered datasets
+# Each filter is applied once and reused across visualizations
+
+data_filtered_c99ea918 <- dashboardr::.convert_haven(data) %>% dplyr::filter(period_trunc >= Sys.Date() - 7)
+data_filtered_06cc0e68 <- dashboardr::.convert_haven(data) %>% dplyr::filter(period_trunc >= Sys.Date() - 30)
+
+```
+
+
+```{r}
+#| echo: false
+#| results: 'asis'
+dashboardr::render_input_row(list(
+  list(
+    input_id = "project_name",
+    label = "Filter by project",
+    type = "select_single",
+    filter_var = "project_name",
+    options = c("All", "FTAC Ghana"),
+    options_from = NULL,
+    default_selected = "All",
+    placeholder = "Select...",
+    width = "300px",
+    min = 0,
+    max = 100,
+    step = 1,
+    value = NULL,
+    show_value = TRUE,
+    inline = TRUE,
+    stacked = FALSE,
+    stacked_align = "center",
+    group_align = "left",
+    ncol = NULL,
+    nrow = NULL,
+    toggle_series = NULL,
+    override = FALSE,
+    labels = NULL,
+    size = "md",
+    help = NULL,
+    disabled = FALSE,
+    mt = NULL,
+    mr = NULL,
+    mb = NULL,
+    ml = NULL,
+    icons = NULL
+  ),
+  list(
+    input_id = "approval_status",
+    label = "Filter by status",
+    type = "select_single",
+    filter_var = "approval_status",
+    options = c("All", "approved", "pending", "rejected"),
+    options_from = NULL,
+    default_selected = "All",
+    placeholder = "Select...",
+    width = "300px",
+    min = 0,
+    max = 100,
+    step = 1,
+    value = NULL,
+    show_value = TRUE,
+    inline = TRUE,
+    stacked = FALSE,
+    stacked_align = "center",
+    group_align = "left",
+    ncol = NULL,
+    nrow = NULL,
+    toggle_series = NULL,
+    override = FALSE,
+    labels = NULL,
+    size = "md",
+    help = NULL,
+    disabled = FALSE,
+    mt = NULL,
+    mr = NULL,
+    mb = NULL,
+    ml = NULL,
+    icons = NULL
+  )
+), style = "boxed", align = "center")
+```
+
+## Timeframe
+
+
+::: {.panel-tabset}
+
+### Last week
+
+```{r timeframe-7}
+# Last week
+result <- viz_bar(
+  data = data_filtered_c99ea918,
+  title = "Last week",
+  color_palette = NULL,
+  weight_var = NULL,
+  x_var = "entity_name",
+  y_var = "survey_count",
+  horizontal = TRUE,
+  y_label = "Number of burns",
+  x_label = "Coordinator",
+  cross_tab_filter_vars = c("project_name", "approval_status")
+)
+
+result <- dashboardr:::.embed_cross_tab(result)
+
+result
+```
+
+
+### Last month
+
+```{r timeframe-8}
+# Last month
+result <- viz_bar(
+  data = data_filtered_06cc0e68,
+  title = "Last month",
+  color_palette = NULL,
+  weight_var = NULL,
+  x_var = "entity_name",
+  y_var = "survey_count",
+  horizontal = TRUE,
+  y_label = "Number of burns",
+  x_label = "Coordinator",
+  cross_tab_filter_vars = c("project_name", "approval_status")
+)
+
+result <- dashboardr:::.embed_cross_tab(result)
+
+result
+```
+
+
+### All time
+
+```{r timeframe-9}
+# All time
+result <- viz_timeline(
+  data = data,
+  title = "All time",
+  color_palette = NULL,
+  weight_var = NULL,
+  group_var = "entity_name",
+  y_var = "survey_count",
+  time_var = "period_trunc",
+  y_label = "Number of burns",
+  x_label = "Week",
+  agg = "sum",
+  cross_tab_filter_vars = c("project_name", "approval_status")
+)
+
+result <- dashboardr:::.embed_cross_tab(result)
+
+result
+```
+
+
+:::
+

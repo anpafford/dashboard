@@ -35,13 +35,9 @@ knitr::opts_chunk$set(
 
 
 
-This dashboard displays information on farm, observer, number of bags produced, and timeframes for the updated Atmosfair data set.
+This dashboard displays production statistics per kiln and coordinator.
 
 
 
-Each entry is a usage survey that has been linked to a production survey.
-
-
-
-If there's any other information that you need, ask Alex.
+Let me know if there is any other information that would be helpful.
 

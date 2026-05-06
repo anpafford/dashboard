@@ -80,3 +80,5 @@ output_data/
 *.bak
 *.backup
 *.orig
+# Large files (>10MB)
+.RDataTmp

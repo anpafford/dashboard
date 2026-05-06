@@ -40,7 +40,7 @@ knitr::opts_chunk$set(
 }
 
 # Load data
-data <- .load_bundle('dashboard_data_bundle.rds', 'dataset_large_17311obs.rds')
+data <- .load_bundle('dashboard_data_bundle.rds', 'dataset_small_322obs.rds')
 
 # Data summary
 cat('Dataset loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
@@ -52,39 +52,6 @@ cat('Dataset loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
 #| echo: false
 #| results: 'asis'
 dashboardr::render_input_row(list(
-  list(
-    input_id = "year",
-    label = "Filter by year",
-    type = "radio",
-    filter_var = "year",
-    options = c("All", "2025", "2026"),
-    options_from = NULL,
-    default_selected = "All",
-    placeholder = "Select...",
-    width = "300px",
-    min = 0,
-    max = 100,
-    step = 1,
-    value = NULL,
-    show_value = TRUE,
-    inline = TRUE,
-    stacked = FALSE,
-    stacked_align = "center",
-    group_align = "left",
-    ncol = NULL,
-    nrow = NULL,
-    toggle_series = NULL,
-    override = FALSE,
-    labels = NULL,
-    size = "md",
-    help = NULL,
-    disabled = FALSE,
-    mt = NULL,
-    mr = NULL,
-    mb = NULL,
-    ml = NULL,
-    icons = NULL
-  ),
   list(
     input_id = "month",
     label = "Filter by month",
@@ -159,17 +126,17 @@ dashboardr::render_input_row(list(
 
 ::: {.panel-tabset}
 
-### Survey count per observer
+### Survey count per kiln ID
 
 ```{r how-many-surveys}
-# Survey count per observer
+# Survey count per kiln ID
 result <- viz_bar(
   data = data,
-  title = "Survey count per observer",
+  title = "Survey count per kiln ID",
   color_palette = NULL,
   weight_var = NULL,
-  x_var = "Observer",
-  cross_tab_filter_vars = c("year", "month", "week")
+  x_var = "kiln_id",
+  cross_tab_filter_vars = c("month", "week")
 )
 
 result <- dashboardr:::.embed_cross_tab(result)
@@ -178,17 +145,17 @@ result
 ```
 
 
-### Survey count per farm
+### Survey count per feedstock
 
 ```{r how-many-surveys-2}
-# Survey count per farm
+# Survey count per feedstock
 result <- viz_bar(
   data = data,
-  title = "Survey count per farm",
+  title = "Survey count per feedstock",
   color_palette = NULL,
   weight_var = NULL,
-  x_var = "Farm.name",
-  cross_tab_filter_vars = c("year", "month", "week")
+  x_var = "feedstock_name",
+  cross_tab_filter_vars = c("month", "week")
 )
 
 result <- dashboardr:::.embed_cross_tab(result)

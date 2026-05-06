@@ -40,7 +40,7 @@ knitr::opts_chunk$set(
 }
 
 # Load data
-data <- .load_bundle('dashboard_data_bundle.rds', 'dataset_large_12141obs.rds')
+data <- .load_bundle('dashboard_data_bundle.rds', 'dataset_large_17311obs.rds')
 
 # Data summary
 cat('Dataset loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
@@ -53,11 +53,44 @@ cat('Dataset loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
 #| results: 'asis'
 dashboardr::render_input_row(list(
   list(
+    input_id = "year",
+    label = "Filter by year",
+    type = "radio",
+    filter_var = "year",
+    options = c("All", "2025", "2026"),
+    options_from = NULL,
+    default_selected = "All",
+    placeholder = "Select...",
+    width = "300px",
+    min = 0,
+    max = 100,
+    step = 1,
+    value = NULL,
+    show_value = TRUE,
+    inline = TRUE,
+    stacked = FALSE,
+    stacked_align = "center",
+    group_align = "left",
+    ncol = NULL,
+    nrow = NULL,
+    toggle_series = NULL,
+    override = FALSE,
+    labels = NULL,
+    size = "md",
+    help = NULL,
+    disabled = FALSE,
+    mt = NULL,
+    mr = NULL,
+    mb = NULL,
+    ml = NULL,
+    icons = NULL
+  ),
+  list(
     input_id = "month",
     label = "Filter by month",
     type = "select_single",
     filter_var = "month",
-    options = c("All", "April", "August", "December", "July", "June", "March", "May", "November", "October", "September"),
+    options = c("All", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
     options_from = NULL,
     default_selected = "All",
     placeholder = "Select...",
@@ -90,7 +123,7 @@ dashboardr::render_input_row(list(
     label = "Filter by week",
     type = "select_single",
     filter_var = "week",
-    options = c("All", "Week 23", "Week 51", "Week 25", "Week 49", "Week 31", "Week 50", "Week 34", "Week 1", "Week 37", "Week 39", "Week 52", "Week 41", "Week 22", "Week 26", "Week 27", "Week 43", "Week 35", "Week 24", "Week 42", "Week 38", "Week 30", "Week 19", "Week 33", "Week 28", "Week 14", "Week 17", "Week 46", "Week 40", "Week 29", "Week 16", "Week 48", "Week 45", "Week 20", "Week 13", "Week 36", "Week 15", "Week 32", "Week 21", "Week 47", "Week 18", "Week 44"),
+    options = c("All", "Week 10", "Week 12", "Week 13", "Week 14", "Week 15", "Week 16", "Week 17", "Week 18", "Week 19", "Week 20", "Week 21", "Week 22", "Week 23", "Week 24", "Week 25", "Week 26", "Week 27", "Week 28", "Week 29", "Week 30", "Week 31", "Week 32", "Week 33", "Week 34", "Week 35", "Week 36", "Week 37", "Week 38", "Week 39", "Week 40", "Week 41", "Week 42", "Week 43", "Week 44", "Week 45", "Week 46", "Week 47", "Week 48", "Week 49", "Week 50", "Week 51", "Week 52"),
     options_from = NULL,
     default_selected = "All",
     placeholder = "Select...",
@@ -136,7 +169,7 @@ result <- viz_bar(
   color_palette = NULL,
   weight_var = NULL,
   x_var = "Observer",
-  cross_tab_filter_vars = c("month", "week")
+  cross_tab_filter_vars = c("year", "month", "week")
 )
 
 result <- dashboardr:::.embed_cross_tab(result)
@@ -155,7 +188,7 @@ result <- viz_bar(
   color_palette = NULL,
   weight_var = NULL,
   x_var = "Farm.name",
-  cross_tab_filter_vars = c("month", "week")
+  cross_tab_filter_vars = c("year", "month", "week")
 )
 
 result <- dashboardr:::.embed_cross_tab(result)

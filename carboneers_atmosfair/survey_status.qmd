@@ -4,7 +4,7 @@ format: html
 ---
 
 ```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
-dashboardr::.page_config(accessibility = TRUE, crosstab_prefix = "survey_status")
+dashboardr::.page_config(accessibility = TRUE, inputs = TRUE, crosstab_prefix = "survey_status")
 ```
 
 ```{r setup}
@@ -28,33 +28,141 @@ knitr::opts_chunk$set(
   dpi = 300
 )
 
+# Bundle loader — reads the RDS bundle once, then extracts datasets by key
+.load_bundle <- function(bundle_file, key) {
+  if (!exists('.dashboardr_bundle_cache', inherits = FALSE))
+    .dashboardr_bundle_cache <<- list()
+  if (is.null(.dashboardr_bundle_cache[[bundle_file]]))
+    .dashboardr_bundle_cache[[bundle_file]] <<- readRDS(bundle_file)
+  if (!(key %in% names(.dashboardr_bundle_cache[[bundle_file]])))
+    stop("Bundle key '", key, "' not found in ", bundle_file, call. = FALSE)
+  .dashboardr_bundle_cache[[bundle_file]][[key]]
+}
+
 # Load multiple datasets
 
-# Load data_1
-data_1 <- readRDS('data_1_4obs.rds')
-cat('data_1 loaded:', nrow(data_1), 'rows,', ncol(data_1), 'columns\n')
+# Load data
+data <- .load_bundle('dashboard_data_bundle.rds', 'dataset_small_118obs.rds')
+cat('data loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
 
-# Load data_2
-data_2 <- readRDS('dataset_large_12141obs.rds')
-cat('data_2 loaded:', nrow(data_2), 'rows,', ncol(data_2), 'columns\n')
+# Load dataset
+dataset <- .load_bundle('dashboard_data_bundle.rds', 'dataset_large_17311obs_2.rds')
+cat('dataset loaded:', nrow(dataset), 'rows,', ncol(dataset), 'columns\n')
 
 ```
 
 
 
 
-## Total breakdown by survey status
 
-```{r total-breakdown-by-survey-status}
-# Total breakdown by survey status
-result <- viz_treemap(
-  data = data_1,
-  title = "Total breakdown by survey status",
-  value_var = "n",
-  group_var = "Survey.status"
-)
 
-result
+We can also break down the survey status by farm and observer.
+
+
+```{r}
+#| echo: false
+#| results: 'asis'
+dashboardr::render_input_row(list(
+  list(
+    input_id = "year",
+    label = "Filter by year",
+    type = "radio",
+    filter_var = "year",
+    options = c("All", "2025", "2026"),
+    options_from = NULL,
+    default_selected = "All",
+    placeholder = "Select...",
+    width = "300px",
+    min = 0,
+    max = 100,
+    step = 1,
+    value = NULL,
+    show_value = TRUE,
+    inline = TRUE,
+    stacked = FALSE,
+    stacked_align = "center",
+    group_align = "left",
+    ncol = NULL,
+    nrow = NULL,
+    toggle_series = NULL,
+    override = FALSE,
+    labels = NULL,
+    size = "md",
+    help = NULL,
+    disabled = FALSE,
+    mt = NULL,
+    mr = NULL,
+    mb = NULL,
+    ml = NULL,
+    icons = NULL
+  ),
+  list(
+    input_id = "month",
+    label = "Filter by month",
+    type = "select_single",
+    filter_var = "month",
+    options = c("All", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
+    options_from = NULL,
+    default_selected = "All",
+    placeholder = "Select...",
+    width = "300px",
+    min = 0,
+    max = 100,
+    step = 1,
+    value = NULL,
+    show_value = TRUE,
+    inline = TRUE,
+    stacked = FALSE,
+    stacked_align = "center",
+    group_align = "left",
+    ncol = NULL,
+    nrow = NULL,
+    toggle_series = NULL,
+    override = FALSE,
+    labels = NULL,
+    size = "md",
+    help = NULL,
+    disabled = FALSE,
+    mt = NULL,
+    mr = NULL,
+    mb = NULL,
+    ml = NULL,
+    icons = NULL
+  ),
+  list(
+    input_id = "week",
+    label = "Filter by week",
+    type = "select_single",
+    filter_var = "week",
+    options = c("All", "Week 10", "Week 12", "Week 13", "Week 14", "Week 15", "Week 16", "Week 17", "Week 18", "Week 19", "Week 20", "Week 21", "Week 22", "Week 23", "Week 24", "Week 25", "Week 26", "Week 27", "Week 28", "Week 29", "Week 30", "Week 31", "Week 32", "Week 33", "Week 34", "Week 35", "Week 36", "Week 37", "Week 38", "Week 39", "Week 40", "Week 41", "Week 42", "Week 43", "Week 44", "Week 45", "Week 46", "Week 47", "Week 48", "Week 49", "Week 50", "Week 51", "Week 52"),
+    options_from = NULL,
+    default_selected = "All",
+    placeholder = "Select...",
+    width = "300px",
+    min = 0,
+    max = 100,
+    step = 1,
+    value = NULL,
+    show_value = TRUE,
+    inline = TRUE,
+    stacked = FALSE,
+    stacked_align = "center",
+    group_align = "left",
+    ncol = NULL,
+    nrow = NULL,
+    toggle_series = NULL,
+    override = FALSE,
+    labels = NULL,
+    size = "md",
+    help = NULL,
+    disabled = FALSE,
+    mt = NULL,
+    mr = NULL,
+    mb = NULL,
+    ml = NULL,
+    icons = NULL
+  )
+), style = "boxed", align = "center")
 ```
 
 ## Survey status
@@ -67,12 +175,16 @@ result
 ```{r survey-status}
 # Survey status by observer
 result <- viz_stackedbar(
-  data = data_2,
+  data = dataset,
   title = "Survey status by observer",
+  color_palette = NULL,
+  weight_var = NULL,
   x_var = "Observer",
   stack_var = "Survey.status",
-  stack_label = "Survey status"
+  cross_tab_filter_vars = c("year", "month", "week")
 )
+
+result <- dashboardr:::.embed_cross_tab(result)
 
 result
 ```
@@ -83,16 +195,36 @@ result
 ```{r survey-status-2}
 # Survey status by farm
 result <- viz_stackedbar(
-  data = data_2,
+  data = dataset,
   title = "Survey status by farm",
+  color_palette = NULL,
+  weight_var = NULL,
   x_var = "Farm.name",
   stack_var = "Survey.status",
-  stack_label = "Survey status"
+  cross_tab_filter_vars = c("year", "month", "week")
 )
+
+result <- dashboardr:::.embed_cross_tab(result)
 
 result
 ```
 
 
 :::
+
+## Total breakdown by survey status
+
+```{r total-breakdown-by-survey-status}
+# Total breakdown by survey status
+result <- viz_treemap(
+  data = data,
+  title = "Total breakdown by survey status",
+  value_var = "n",
+  group_var = "Survey.status"
+)
+
+result <- dashboardr:::.embed_cross_tab(result)
+
+result
+```
 

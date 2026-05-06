@@ -1,10 +1,10 @@
 ---
-title: "Reject reason"
+title: "Bags over time"
 format: html
 ---
 
 ```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
-dashboardr::.page_config(accessibility = TRUE, crosstab_prefix = "reject_reason")
+dashboardr::.page_config(accessibility = TRUE, crosstab_prefix = "bags_over_time")
 ```
 
 ```{r setup}
@@ -39,28 +39,29 @@ knitr::opts_chunk$set(
   .dashboardr_bundle_cache[[bundle_file]][[key]]
 }
 
-# Load data
-data <- .load_bundle('dashboard_data_bundle.rds', 'dataset_small_193obs.rds')
+# Load multiple datasets
 
-# Data summary
-cat('Dataset loaded:', nrow(data), 'rows,', ncol(data), 'columns\n')
+# Load data_1
+data_1 <- .load_bundle('dashboard_data_bundle.rds', 'data_1_12obs.rds')
+cat('data_1 loaded:', nrow(data_1), 'rows,', ncol(data_1), 'columns\n')
+
+# Load data_2
+data_2 <- .load_bundle('dashboard_data_bundle.rds', 'dataset_small_322obs.rds')
+cat('data_2 loaded:', nrow(data_2), 'rows,', ncol(data_2), 'columns\n')
 
 ```
 
+## Total bags over time
 
-Notice the inconsistent formatting/encoding of the same categorical value.
-
-This is something we need to emphasize with the interns.
-
-## Total breakdown by survey status reason
-
-```{r total-breakdown-by-survey-status-reason}
-# Total breakdown by survey status reason
-result <- viz_treemap(
-  data = data,
-  title = "Total breakdown by survey status reason",
-  value_var = "n",
-  group_var = "Survey.status.reason"
+```{r timeline-total-bags-kiln-id}
+# Total bags over time
+result <- viz_timeline(
+  data = data_2,
+  title = "Total bags over time",
+  time_var = "month",
+  y_var = "total_bags",
+  agg = "sum",
+  group_var = "kiln_id"
 )
 
 result
