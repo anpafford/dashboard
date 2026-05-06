@@ -38,6 +38,10 @@ production_by_coordinator %>%
   select(entity_name, period_trunc, gap) %>%
   print(n = 50)
 
+glimpse(production_by_kiln)
+glimpse(production_by_coordinator)
+
+
 # Vizzes
 
 # Viz 1: Production by kiln, last week
@@ -124,7 +128,7 @@ surveys_by_coordinator <- create_page("Burns per coordinator", data = production
     label = "Filter by project",
     type = "select_single",
     filter_var = "project_name",
-    options = unique(production_by_kiln$project_name),
+    options = unique(production_by_coordinator$project_name),
     add_all = TRUE
   ) %>%
   add_input(
@@ -132,7 +136,7 @@ surveys_by_coordinator <- create_page("Burns per coordinator", data = production
     label = "Filter by status",
     type = "select_single",
     filter_var = "approval_status",
-    options = unique(production_by_kiln$approval_status),
+    options = unique(production_by_coordinator$approval_status),
     add_all = TRUE
   ) %>%
   end_input_row() %>%
@@ -155,7 +159,7 @@ biochar_by_coordinator <- create_page("Biochar (kg) per coordinator", data = pro
     label = "Filter by project",
     type = "select_single",
     filter_var = "project_name",
-    options = unique(production_by_kiln$project_name),
+    options = unique(production_by_coordinator$project_name),
     add_all = TRUE
   ) %>%
   add_input(
@@ -163,7 +167,7 @@ biochar_by_coordinator <- create_page("Biochar (kg) per coordinator", data = pro
     label = "Filter by status",
     type = "select_single",
     filter_var = "approval_status",
-    options = unique(production_by_kiln$approval_status),
+    options = unique(production_by_coordinator$approval_status),
     add_all = TRUE
   ) %>%
   end_input_row() %>%
@@ -187,7 +191,4 @@ create_dashboard(
 
 
 # Publish dashboard
-publish_dashboard(
-  message = "Initial commit",
-  path = "docs/operations"
-)
+update_dashboard()
