@@ -181,14 +181,15 @@ biochar_by_coordinator <- create_page("Biochar (kg) per coordinator", data = pro
           time_var = "period_trunc", title = "All time", tabgroup = "Timeframe",
           agg = "sum")
 
+# important
+setwd("docs")
+
 create_dashboard(
   title = "Carboneers Operations Dashboard",
-  output_dir = "docs/operations",
+  output_dir = "operations",
   theme = "flatly"
 ) %>%
   add_pages(home, surveys_by_kiln, biochar_by_kiln, surveys_by_coordinator, biochar_by_coordinator) %>%
   generate_dashboard(render = TRUE, open = "browser")
 
-
-# Publish dashboard
-update_dashboard()
+setwd("..")
