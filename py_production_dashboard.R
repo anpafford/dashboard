@@ -75,7 +75,6 @@ surveys_by_kiln <- create_page("Burns per kiln", data = production_by_kiln, type
     add_all = TRUE
   ) %>%
   end_input_row() %>%
-  add_text("Remember that Atmosfair kilns don't have kiln IDs yet.") %>%
   add_viz(x_var = "entity_name", y_var = "survey_count", horizontal = TRUE,
           title = "Last week", tabgroup = "Timeframe",
           x_label = "Kiln", y_label = "Number of burns",
@@ -107,14 +106,13 @@ biochar_by_kiln <- create_page("Biochar (kg) per kiln", data = production_by_kil
     add_all = TRUE
   ) %>%
   end_input_row() %>%
-  add_text("Remember that Atmosfair kilns don't have kiln IDs yet.") %>%
   add_viz(x_var = "entity_name", y_var = "biochar_kg", horizontal = TRUE,
-          x_label = "Kiln", y_label = "Number of burns",
+          x_label = "Kiln", y_label = "Biochar (kg)",
           title = "Last week", tabgroup = "Timeframe",
           filter = ~ period_trunc >= Sys.Date() - 7) %>%
   add_viz(x_var = "entity_name", y_var = "biochar_kg", horizontal = TRUE,
           title = "Last month", tabgroup = "Timeframe",
-          x_label = "Kiln", y_label = "Number of burns",
+          x_label = "Kiln", y_label = "Biochar (kg)",
           filter = ~ period_trunc >= Sys.Date() - 30) %>%
   add_viz(type = "timeline", group_var = "entity_name", y_var = "biochar_kg",
           time_var = "period_trunc", title = "All time", tabgroup = "Timeframe",
@@ -181,15 +179,16 @@ biochar_by_coordinator <- create_page("Biochar (kg) per coordinator", data = pro
           time_var = "period_trunc", title = "All time", tabgroup = "Timeframe",
           agg = "sum")
 
-# important
-setwd("docs")
+setwd("dashboard")
 
 create_dashboard(
   title = "Carboneers Operations Dashboard",
-  output_dir = "operations",
-  theme = "flatly"
+  output_dir = "docs/operations",
+  theme = "cosmo"
 ) %>%
   add_pages(home, surveys_by_kiln, biochar_by_kiln, surveys_by_coordinator, biochar_by_coordinator) %>%
   generate_dashboard(render = TRUE, open = "browser")
 
-setwd("..")
+# Fix nested docs folder
+system("cp -r ~/dashboard/docs/operations/docs/* ~/dashboard/docs/operations/")
+system("rm -rf ~/dashboard/docs/operations/docs")
